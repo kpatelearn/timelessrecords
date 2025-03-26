@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Molly Devine – EPK</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="molly.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    iframe {
+      width: 100% !important;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+    .epk-two-col iframe {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .epk-two-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    @media(min-width: 768px) {
+      .epk-two-col {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+    .epk-section h2 {
+      text-align: center;
+    }
+    .hamburger.right {
+      position: relative;
+      z-index: 1100;
+    }
+    .epk-section {
+      padding: 1rem;
+    }
+    .epk-two-col p {
+      text-align: left;
+    }
+    /* New wrapper to center embeds if needed */
+    .epk-embeds {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="side-menu-left" class="side-menu side-menu-left">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="artists.html">Artists</a>
+    <a href="music.html">Music</a>
+    <a href="blog.html">Blog</a>
+    <a href="playlists.html">Playlists</a>
+  </div>
+  <div id="side-menu-right" class="side-menu side-menu-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="artists.html">Artists</a>
+    <a href="music.html">Music</a>
+    <a href="blog.html">Blog</a>
+    <a href="playlists.html">Playlists</a>
+  </div>
+  <header>
+    <div class="header-container">
+      <span class="hamburger left">&#9776;</span>
+      <div class="logo">
+        <img src="images/MollyLogoYellow.png" height="160" alt="Molly Devine Logo" />
+      </div>
+      <span class="hamburger right">&#9776;</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/molly.devine.18" title="Facebook">
+        <video src="images/fb.webm" autoplay loop muted playsinline height="50"></video>
+      </a>
+      <a href="https://www.instagram.com/mollydevinemusic" title="Instagram">
+        <video src="images/ig.webm" autoplay loop muted playsinline height="50"></video>
+      </a>
+      <a href="https://www.tiktok.com/@mollydevinenz" title="TikTok">
+        <video src="images/tt.webm" autoplay loop muted playsinline height="50"></video>
+      </a>
+      <a href="https://www.youtube.com/@mollydevine6756" title="YouTube">
+        <video src="images/yt.webm" autoplay loop muted playsinline height="50"></video>
+      </a>
+      <a href="https://open.spotify.com/artist/3an2TOobY5d1MvALIGYe70" title="Spotify">
+        <video src="images/sp.webm" autoplay loop muted playsinline height="50"></video>
+      </a>
+    </div>
+  </header>
+  <section class="epk-hero">
+    <div class="epk-hero-overlay"></div>
+    <h1 class="epk-hero-title">Molly Devine</h1>
+    <p class="epk-hero-tagline">
+      Auckland-based artist blending disco-soul and pop — forging the path to her upcoming single <em>Good Vibes</em>
+    </p>
+  </section>
+  <div class="epk-content">
+    <section class="epk-section">
+      <h2>About Molly</h2>
+      <div class="epk-two-col">
+        <div>
+          <p>
+            Molly Devine is a vibrant singer, songwriter, and DJ known for her electrifying live performances and soulful recordings. With a unique blend of disco-soul and pop, she captivates audiences around the globe with her dynamic energy and heartfelt lyrics. Her artistry is a journey of passion and creativity, always pushing the boundaries of musical expression.
+          </p>
+          <blockquote>
+            “There’s so much space in my heart, I point my life at the stars.”
+          </blockquote>
+        </div>
+        <div>
+          <img src="images/molly3.jpg" alt="Molly Devine profile photo" />
+        </div>
+      </div>
+    </section>
+    <!-- Embeds section with Spotify and full-height YouTube -->
+    <section class="epk-section">
+      <h2>Listen to Molly’s Music</h2>
+      <iframe src="https://open.spotify.com/embed/artist/3an2TOobY5d1MvALIGYe70?utm_source=generator&theme=0" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="epk-embeds">
+        <iframe class="youtube-embed" src="https://www.youtube.com/embed/iGRtaepz0FY?si=jkJHUQevWcRKonpG" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+    <!-- Upcoming release with full text -->
+    <section class="epk-section">
+      <h2>Upcoming Release: "Good Vibes"</h2>
+      <p>
+        Molly’s next single, <em>Good Vibes</em>, is set to release soon and promises a fresh disco-soul sound. <br/> Join the <span id="greenRoomLink" class="green-room-link">Green Room</span> for more updates as she continues to inspire us.<br/><br/>
+      </p>
+      <div class="cover-art">
+        <img src="images/GoodVibesCover.png" alt="Molly's Good Vibes cover artwork">
+      </div>
+    </section>
+    <!-- Press photos section -->
+    <section class="epk-section">
+      <div class="epk-gallery">
+        <img src="images/IMG_5952.JPG" alt="Molly Devine press photo 1" />
+        <img src="images/IMG_5754.JPG" alt="Molly Devine press photo 2" />
+        <img src="images/IMG_5982.JPG" alt="Molly Devine press photo 3" />
+      </div>
+      <a class="epk-btn" href="#" target="_blank">Download EPK / Press Kit</a>
+    </section>
+    <!-- Bottom social icons restored -->
+    <section class="epk-section">
+      <h2>Connect with Molly</h2>
+      <div class="socials epk-socials-centered">
+        <a href="https://www.facebook.com/molly.devine.18" title="Facebook">
+          <video src="images/fb.webm" autoplay loop muted playsinline height="50"></video>
+        </a>
+        <a href="https://www.instagram.com/mollydevinemusic" title="Instagram">
+          <video src="images/ig.webm" autoplay loop muted playsinline height="50"></video>
+        </a>
+        <a href="https://www.tiktok.com/@mollydevinenz" title="TikTok">
+          <video src="images/tt.webm" autoplay loop muted playsinline height="50"></video>
+        </a>
+        <a href="https://www.youtube.com/@mollydevine6756" title="YouTube">
+          <video src="images/yt.webm" autoplay loop muted playsinline height="50"></video>
+        </a>
+        <a href="https://open.spotify.com/artist/3an2TOobY5d1MvALIGYe70" title="Spotify">
+          <video src="images/sp.webm" autoplay loop muted playsinline height="50"></video>
+        </a>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p>Contact us: <a href="mailto:admin@timelessrecords.nz">admin@timelessrecords.nz</a></p>
+      <p>&copy; 2025 Timeless Records</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+
+  <div id="greenRoomModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
+        style="width:100%;height:100%;border:none;border-radius:20px"
+        title="KP Form"
+        data-layout="{'id':'INLINE'}"
+        data-form-id="9ipFqnn8PAzpysxstTRH"
+      ></iframe>
+    </div>
+  </div>
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>

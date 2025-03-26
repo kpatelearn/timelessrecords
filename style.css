@@ -1,0 +1,378 @@
+/*------------------------------------------
+  Global Reset & Variables
+-------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #222222;      /* Dark background for header, footer, side menus */
+  --secondary-color: #F9F6DE;      /* Light text & accents */
+  --accent-color: #688D6D;         /* Accent hover color */
+  --body-font: 'Lora', serif;
+  --heading-font: 'Montserrat', sans-serif;
+  --tagline-font: 'IBM Plex Sans', sans-serif;
+  --header-height: 100px;          /* Added header height variable */
+  --footer-height: 60px;           /* Added footer height variable */
+}
+
+/*------------------------------------------
+  HTML, Body & Flex Setup
+-------------------------------------------*/
+html, body {
+  height: 100%;
+  font-family: var(--body-font);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/*------------------------------------------
+  Global Typography
+-------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--secondary-color);
+}
+
+/*------------------------------------------
+  Header & Navigation
+-------------------------------------------*/
+header {
+  background-color: var(--primary-color);
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+.logo {
+  text-align: center;
+  flex: 1;
+}
+
+.logo img {
+  width: auto;
+  max-height: 160px; /* Reduced from 200px */
+  height: auto;
+}
+
+/*------------------------------------------
+  Social Icons
+-------------------------------------------*/
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+  background-color: var(--primary-color); /* Ensure background color matches header */
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.1);
+}
+
+.socials video {
+  max-height: 40px;
+  width: auto;
+}
+
+/*------------------------------------------
+  Side Menu
+-------------------------------------------*/
+.side-menu {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background-color: var(--primary-color);
+  padding-top: 60px;
+}
+
+.side-menu a {
+  padding: 0.625rem 1.875rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  display: block;
+  transition: color 0.3s;
+}
+
+.side-menu a:hover {
+  color: var(--accent-color);
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 20px;
+  font-size: 2rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.side-menu-left {
+  left: 0;
+}
+
+.side-menu-right {
+  right: 0;
+  left: auto;
+}
+
+/*------------------------------------------
+  Hero Section
+-------------------------------------------*/
+.hero {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--footer-height) - auto); /* Use auto instead of var(--header-height) */
+  padding: 2rem 1.25rem;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(104,141,109,0.8), rgba(34,34,34,0.8)),
+              url('vinyl2.jpg') no-repeat center center/cover;
+}
+
+.hero-content {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Elegant, controlled hero text with smaller font sizes */
+.hero-content .tagline {
+  font-family: var(--tagline-font);
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 1.2vw, 1.1rem); /* Reduced max size */
+  line-height: 1.4;
+}
+
+.hero-content p {
+  font-size: clamp(0.9rem, 1.1vw, 1rem); /* Reduced max size */
+  line-height: 1.5;
+  max-width: 85%;
+  margin: 0 auto 1.5rem;
+}
+
+.hero iframe {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  min-height: 300px;
+  margin-top: 1rem;
+}
+
+/* Hero Hamburger for Mobile Navigation */
+.hero-hamburger {
+  position: fixed;
+  bottom: calc(var(--footer-height) + 1.25rem); /* Account for fixed footer */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  z-index: 999; /* Below footer */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: var(--primary-color);
+  margin: 10% auto;
+  padding: 1rem;
+  border: 1px solid var(--accent-color);
+  width: 90%;
+  max-width: 600px;
+  height: 450px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.green-room-link {
+  color: var(--accent-color);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.green-room-link:hover {
+  color: #5c7e60;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+body .post-container {
+  padding-bottom: calc(var(--footer-height) + 2rem);
+}
+
+#markdown-content img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
+
+/*------------------------------------------
+  Footer - Now Fixed
+-------------------------------------------*/
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 0 1.25rem;
+  width: 100%;
+  position: fixed; /* Fixed footer */
+  bottom: 0;
+  left: 0;
+  height: var(--footer-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+  border-top: 1px solid rgba(249, 246, 222, 0.3); /* Subtle top border */
+}
+
+footer a {
+  color: var(--secondary-color); /* This uses your light text color */
+  text-decoration: underline; /* Keeps the underline */
+  transition: color 0.3s ease; /* Optional: adds smooth transition effect */
+}
+
+/* Optional: if you want a hover effect */
+footer a:hover {
+  color: var(--accent-color); /* Changes to your accent color on hover */
+}
+
+/*------------------------------------------
+  Responsive Media Queries
+-------------------------------------------*/
+/* For devices 600px and up */
+@media (min-width: 600px) {
+  .logo img {
+    max-height: 120px;
+  }
+  .socials video {
+    max-height: 35px;
+  }
+}
+
+/* For devices 768px and up */
+@media (min-width: 768px) {
+  header {
+    padding: 1.5rem;
+  }
+  .logo img {
+    max-height: 140px; /* Reduced from 200px */
+  }
+  .hamburger {
+    font-size: 2rem;
+  }
+  .hero {
+    padding: 3rem 2rem; /* Reduced from 4rem */
+  }
+  .hero-content .tagline {
+    font-size: clamp(1.05rem, 1.3vw, 1.15rem); /* Reduced size */
+  }
+  .hero-content p {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem); /* Reduced size */
+  }
+}
+
+/* For small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 80px; /* Smaller header on mobile */
+  }
+  .logo img {
+    max-height: 80px;
+  }
+  .socials {
+    gap: 3px;
+  }
+  .socials video {
+    max-height: 30px;
+  }
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+  .hero-content .tagline {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+  .hero-content p {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  }
+}
