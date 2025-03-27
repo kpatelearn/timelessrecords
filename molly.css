@@ -122,6 +122,14 @@ EPK Content
   justify-content: center;
   text-align: center;
 }
+
+.epk-section img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Keeps it square */
+}
+
 .epk-section h2 {
   font-family: var(--heading-font);
   font-size: 1.75rem;
@@ -281,3 +289,4 @@ Responsive font for epk-content paragraphs
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   word-wrap: break-word;
 }
+
