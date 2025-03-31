@@ -31,6 +31,10 @@
   /*--------------------------------------------------
     Hero Section: Leverage Main Site's Style with Custom Background
   --------------------------------------------------*/
+  body {
+    padding-bottom: 80px
+  }
+  
   #home {
     background: url('images/molly-hero.jpg') center center / cover no-repeat;
     position: relative;
@@ -279,24 +283,47 @@
 /* Narrower, compact socials section */
 #socials {
   min-height: 40vh;              
-  padding: 2rem 1rem;            
+  padding: 2rem 1rem;           
 }
 
-/* Ensure the social icons remain consistent with the header icons */
-#socials .epk-socials-centered {
-  display: flex;
-  justify-content: center;
-  gap: 2rem; /* Keeps them nicely spaced */
+@media (max-width: 360px) {
+  #socials .epk-socials-centered img {
+    height: 2rem !important; /* smaller icons */
+    padding: 0; /* remove extra padding */
+  }
+  #socials .epk-socials-centered {
+    gap: 0.3rem; /* reduce the gap between icons */
+    padding: 0 0.8rem; /* add slight horizontal padding for breathing room */
+  }
 }
 
-#socials .epk-socials-centered a {
-  text-decoration: none; /* Remove any underlines */
+@media (max-width: 768px) {
+  .epk-socials-centered a img {
+      height: 2.5rem;
+  }
 }
 
-#socials .epk-socials-centered img {
-  height: 3rem !important; /* Force a consistent, smaller size */
-  width: auto;
-  padding-bottom: 25%;
+@media (max-width: 480px) {
+  .epk-socials-centered a img {
+      height: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .epk-socials-centered a img {
+      height: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .epk-socials-centered a {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+  }
+}
+
+.epk-socials-centered a {
+  text-decoration: none;
 }
 
   /*--------------------------------------------------
