@@ -1,79 +1,222 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Get elements
-  let menuLeft = document.getElementById("side-menu-left");
-  let menuRight = document.getElementById("side-menu-right");
-  let menuBottom = document.getElementById("menu-bottom");
-
-  let hamburgerLeft = document.querySelector(".hamburger.left");
-  let hamburgerRight = document.querySelector(".hamburger.right");
-  let hamburgerBottom = document.querySelector(".hero-hamburger");
-
-  // Toggle function for side menus
-  function toggleMenu(menu) {
-      if (menu.style.width === "250px") {
-          menu.style.width = "0";
-      } else {
-          menu.style.width = "250px";
-      }
-  }
-
-  // Toggle function for bottom menu
-  function toggleBottomMenu() {
-      let currentHeight = window.getComputedStyle(menuBottom).height;
-      if (currentHeight === "200px") {
-          menuBottom.style.height = "0";
-      } else {
-          menuBottom.style.height = "200px";
-      }
-  }
-
-  // Attach event listeners to hamburgers
-  if (hamburgerLeft) {
-      hamburgerLeft.addEventListener("click", function() {
-          toggleMenu(menuLeft);
-      });
-  }
-
-  if (hamburgerRight) {
-      hamburgerRight.addEventListener("click", function() {
-          toggleMenu(menuRight);
-      });
-  }
-
-
-  // Close menus when clicking inside them
-  menuLeft.addEventListener("click", function() {
-      menuLeft.style.width = "0";
-  });
-
-  menuRight.addEventListener("click", function() {
-      menuRight.style.width = "0";
-  });
-
-
-  console.log("script.js loaded and event listeners set up!");
-});
-
-// Green Room modal logic
-document.addEventListener("DOMContentLoaded", function () {
-    const greenRoomBtn = document.getElementById("greenRoomLink");
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.main-nav a');
+    const heroSection = document.getElementById("home");
+    const heroImage = heroSection ? heroSection.querySelector(".hero-content img") : null;
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const footerHoverZone = document.getElementById('footer-hover-zone');
+    const heroLogo = document.getElementById("heroLogo");
+    const greenRoomLink = document.getElementById("greenRoomLink");
     const modal = document.getElementById("greenRoomModal");
-    const closeBtn = document.querySelector(".close-btn");
+    const closeBtn = modal ? modal.querySelector(".close-btn") : null;
+
+
+    let lastScrollTop = 0;
+    let isHoveringFooterZone = false;
+    let isHoveringFooter = false;
+    let ticking = false;
   
-    if (greenRoomBtn && modal && closeBtn) {
-      greenRoomBtn.addEventListener("click", () => {
-        modal.style.display = "block";
-      });
-  
-      closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-  
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
+    // Make sure all scroll containers are properly configured on page load
+    function ensureNoNestedScrolling() {
+      // Force the body to be the only scroll container
+      document.body.style.overflowY = 'auto';
+      document.body.style.height = 'auto';
+      
+      // Make sure no other elements become scroll containers
+      const potentialScrollContainers = [
+        document.documentElement,
+        document.getElementById('page-content'),
+        ...document.querySelectorAll('.page-section')
+      ];
+      
+      potentialScrollContainers.forEach(el => {
+        if (el) {
+          el.style.overflow = 'visible';
+          el.style.overflowX = 'visible';
+          el.style.overflowY = 'visible';
         }
       });
     }
-  });
   
+    // Call immediately and on window resize
+    ensureNoNestedScrolling();
+    window.addEventListener('resize', ensureNoNestedScrolling);
+  
+    // Smooth scroll navigation with improved behavior
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          // Use scrollIntoView with behavior: 'smooth' for a standard smooth scroll
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  
+    // Green Room Modal functionality
+    const openModal = () => {
+      if (modal) {
+        modal.classList.add("active");
+      }
+    };
+  
+    if (greenRoomLink) {
+      greenRoomLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+  
+    if (heroLogo) {
+      heroLogo.addEventListener("click", () => {
+        openModal();
+      });
+    }
+  
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+    }
+  
+    if (modal) {
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    }
+  
+    // Hero image interactions
+    if (heroSection) {
+      heroSection.addEventListener("mouseenter", () => {
+        if (heroImage) heroImage.style.opacity = 1;
+        heroSection.classList.remove('bright');
+      });
+  
+      heroSection.addEventListener("mouseleave", () => {
+        if (heroImage) heroImage.style.opacity = 0;
+        heroSection.classList.add('bright');
+      });
+  
+      // For mobile devices
+      heroSection.addEventListener('click', (e) => {
+        if (e.target !== heroLogo) {
+          heroSection.classList.add('bright');
+        }
+      });
+    }
+  
+    // Improved intersection observer with lower threshold for smoother transitions
+    const sections = document.querySelectorAll('.page-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        // Make the threshold lower for smoother transitions
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          entry.target.classList.add('visible');
+        } else if (!entry.isIntersecting && entry.intersectionRatio < 0.12) {
+          // Only remove visible class when it's clearly out of view
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { 
+      threshold: [0.05, 0.1, 0.5], 
+      rootMargin: '0px'
+    }); 
+    
+    sections.forEach(section => observer.observe(section));  
+
+  
+    // More efficient header/footer visibility management using requestAnimationFrame
+    function updateHeaderFooterVisibility() {
+      const currentScroll = window.scrollY;
+      const scrollingDown = currentScroll > lastScrollTop;
+  
+      // Header logic - simplified
+      if (scrollingDown && currentScroll > 50) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+  
+      // Footer logic - simplified
+      const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 50);
+      if (nearBottom || isHoveringFooter || isHoveringFooterZone) {
+        footer.classList.remove('hidden');
+      } else {
+        footer.classList.add('hidden');
+      }
+  
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      ticking = false;
+    }
+  
+    // Footer hover events
+    if (footerHoverZone) {
+      footerHoverZone.addEventListener('mouseenter', () => {
+        isHoveringFooterZone = true;
+        updateHeaderFooterVisibility();
+      });
+  
+      footerHoverZone.addEventListener('mouseleave', () => {
+        isHoveringFooterZone = false;
+        updateHeaderFooterVisibility();
+      });
+    }
+  
+    if (footer) {
+      footer.addEventListener('mouseenter', () => {
+        isHoveringFooter = true;
+        updateHeaderFooterVisibility();
+      });
+  
+      footer.addEventListener('mouseleave', () => {
+        isHoveringFooter = false;
+        updateHeaderFooterVisibility();
+      });
+    }
+  
+    // Mobile-specific adjustments
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      if (heroSection && heroLogo) {
+        heroSection.addEventListener('click', (e) => {
+          if (e.target !== heroLogo) {
+            heroSection.classList.add('bright');
+          }
+        });
+  
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 10) {
+            heroSection.classList.remove('bright');
+          }
+        });
+      }
+    }
+  
+    // RequestAnimationFrame for scroll events to improve performance
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateHeaderFooterVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  
+    // Event listeners
+    window.addEventListener('resize', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateHeaderFooterVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  
+    // Initial check
+    updateHeaderFooterVisibility();
+  });

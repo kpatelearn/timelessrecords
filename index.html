@@ -4,123 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Timeless Records</title>
-  <!-- Google Fonts: Montserrat for headings, Raleway for body -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Google Fonts: Montserrat for headings, Lora for body text -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Montserrat, Lora, IBM Plex Sans -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-  <link rel="shortcut icon" href="/images/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-  <link rel="manifest" href="/images/site.webmanifest" />   
 </head>
 <body>
-  <!-- Left Side Menu -->
-  <div id="side-menu-left" class="side-menu side-menu-left">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="artists.html">Artists</a>
-    <a href="music.html">Music</a>
-    <a href="blog.html">Blog</a>
-    <a href="playlists.html">Playlists</a>
-    <a href="https://shop.timelessrecords.nz/products-list">Shop</a>
-  </div>
-  
-  <!-- Right Side Menu -->
-  <div id="side-menu-right" class="side-menu side-menu-right">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="artists.html">Artists</a>
-    <a href="music.html">Music</a>
-    <a href="blog.html">Blog</a>
-    <a href="playlists.html">Playlists</a>
-    <a href="https://shop.timelessrecords.nz/products-list">Shop</a>
-  </div>
-  
-  
-  <!-- Header with double hamburger and centered logo -->
   <header>
-    <div class="header-container">
-      <span class="hamburger left">&#9776;</span>
-      <div class="logo">
-        <img src="images/Transparent Logo.svg" height="200" alt="Timeless Records Logo">
-      </div>
-      <span class="hamburger right">&#9776;</span>
-    </div>
-    <div class="socials">
-      <a href="https://www.facebook.com/timelessrecordsnz" title="Facebook">
-        <video src="images/fb.webm" autoplay loop muted playsinline height="50"></video>
-      </a>
-      <a href="https://www.instagram.com/timelessrecordsnz" title="Instagram">
-        <video src="images/ig.webm" autoplay loop muted playsinline height="50"></video>
-      </a>
-      <a href="https://www.tiktok.com/@timelessrecordsnz" title="TikTok">
-        <video src="images/tt.webm" autoplay loop muted playsinline height="50"></video>
-      </a>
-      <a href="https://www.youtube.com/@timelessrecordsnz" title="YouTube">
-        <video src="images/yt.webm" autoplay loop muted playsinline height="50"></video>
-      </a>
-      <a href="https://open.spotify.com/user/31yuaqgj7jacjagsppg2tqmc2424" title="Spotify">
-        <video src="images/sp.webm" autoplay loop muted playsinline height="50"></video>
-      </a>
-    </div>
+    <nav class="main-nav">
+      <a href="#"><img src="images/FB.png" alt="Facebook"></a>
+      <a href="#"><img src="images/IG.png" alt="Instagram"></a>
+      <a href="#"><img src="images/TT.png" alt="TikTok"></a>
+      <a href="#"><img src="images/YT.png" alt="YouTube"></a>
+      <a href="#"><img src="images/SP.png" alt="Spotify"></a>
+    </nav>
   </header>
   
-  <section class="hero">
-    <div class="hero-content">
+  <div id="page-content">
+    <section id="home" class="page-section">
+        <div class="hero-content">
+          <div class="hero-image-wrapper">
+            <img src="images/transLogoGrey3.png" alt="Timeless Records Logo" id="heroLogo" class="parallax-logo">
+          </div>
+        </div>
+    </section>
+    
+    <section id="about" class="page-section">
+      <!-- About content here -->
+      <h2>About Us</h2>
       <p class="tagline">
-        We're at the very beginning of our journey and plan to launch officially on April 25th. <br> 
-        Join us in the <span id="greenRoomLink" class="green-room-link">Green Room</span> and stay updated.
+        Timeless /ˈtaɪm.ləs/: <i>The willingness of an artist to be inspired by any era of musical history</i> <br>
+        Timeless /ˈtaɪm.ləs/: <i>The impact music has on a person regardless of their age</i> <br>
+        Timeless /ˈtaɪm.ləs/: <i>The philosophy of a record label that moves with the times</i> <br>
+        Timeless /ˈtaɪm.ləs/: <i>Fans who've had music in their soul for all their past lives</i>
       </p>
-    </div>
-  </section>
+    </section>
+    
+    <section id="artists" class="page-section">
+        <h2>Artists</h2>
+        <div class="artist-gallery">
+          <img src="images/Soon22.jpg" alt="Artist 1" class="artist-img">
+          <img src="images/Soon21.jpg" alt="Artist 2" class="artist-img">
+          <img src="images/Soon23.jpg" alt="Artist 3" class="artist-img">
+        </div>
+    </section>
 
-<!-- Footer with contact information -->
-<footer>
-  <div class="footer-content">
+    <section id="music" class="page-section">
+      <h1>Music</h1>
+      <p class="tagline">
+        Our first release will be on April 25th. <br/> This will be followed by a single from another new artist on May 16th <br/>
+        We can't wait to announce them both! <br/>
+        Join us <span id="greenRoomLink" class="green-room-link">backstage</span> and stay updated.
+      </p>
+    </section>
+    
+    <section id="playlists" class="page-section">
+        <div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5AalaZWWS5PAVhnyfVacId?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+    </section>
+   
+    <section id="shop" class="page-section">
+        <a href="https://shop.timelessrecords.nz/products-list" class="plain-link">
+        <h1>Shop</h1>
+        </a>
+    </section>
+  
+  </div>
+  
+  <footer>
     <p>Contact us: <a href="mailto:admin@timelessrecords.nz">admin@timelessrecords.nz</a></p>
     <p>&copy; 2025 Timeless Records</p>
+  </footer>
+  
+  <!-- Green Room Modal -->
+  <div id="greenRoomModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
+        style="width:100%;height:100%;border:none;border-radius:20px"
+        id="inline-9ipFqnn8PAzpysxstTRH"
+        title="Green Room Form">
+      </iframe>
+    </div>
   </div>
-</footer>
+  
+  <div id="footer-hover-zone"></div>
 
+  <!-- External script for the form (from LeadConnector) -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <script src="script.js"></script>
-  <script>
-    // Update CSS variable --vh to reflect 1% of the actual viewport height
-    function setVh() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setVh();
-    window.addEventListener('resize', setVh);
-    </script>
-
-<div id="greenRoomModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <iframe
-  src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
-  style="width:100%;height:100%;border:none;border-radius:20px"
-  id="inline-9ipFqnn8PAzpysxstTRH" 
-  data-layout="{'id':'INLINE'}"
-  data-trigger-type="alwaysShow"
-  data-trigger-value=""
-  data-activation-type="alwaysActivated"
-  data-activation-value=""
-  data-deactivation-type="neverDeactivate"
-  data-deactivation-value=""
-  data-form-name="KP Form"
-  data-height="400"
-  data-layout-iframe-id="inline-9ipFqnn8PAzpysxstTRH"
-  data-form-id="9ipFqnn8PAzpysxstTRH"
-  title="KP Form"
-      >
-</iframe>
-  </div>
-</div>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
-
-    
 </body>
 </html>
