@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll navigation with improved behavior
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
+       // e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
@@ -216,6 +216,20 @@ document.addEventListener('DOMContentLoaded', () => {
         ticking = true;
       }
     });
+
+    const shopTitle = document.getElementById('shop-title');
+
+    shopTitle.addEventListener('click', function () {
+      if (shopTitle.textContent === 'Shop') {
+        shopTitle.textContent = 'Coming Soon';
+        shopTitle.classList.add('clicked');
+      } else {
+        shopTitle.textContent = 'Shop';
+        shopTitle.classList.remove('clicked');
+      }
+    });
+    
+    
   
     // Initial check
     updateHeaderFooterVisibility();

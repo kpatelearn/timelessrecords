@@ -87,10 +87,6 @@ body {
     filter: drop-shadow(0 0 15px rgba(235, 217, 163, 0.9));
 }
 
-#shop h1{
-    padding-bottom: 55%;
-}
-
 a.plain-link,
 a.plain-link:visited,
 a.plain-link:focus,
@@ -99,6 +95,16 @@ a.plain-link:active {
   color: inherit;
   outline: none;
 }
+
+#shop-title {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  #shop-title.clicked {
+    color: gray;
+  }
+  
 
 .page-section {
     min-height: 60vh;
@@ -217,6 +223,10 @@ header.hidden {
     opacity: 0;
     transition: opacity 0.5s ease;
 }  
+
+#about {
+    font-size: 1.15rem;
+}
 
 .artist-gallery {
     display: flex;
