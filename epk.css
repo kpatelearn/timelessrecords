@@ -1,0 +1,312 @@
+/* epk.css – EPK-Specific Styles that Harmonize with style.css */
+
+/*--------------------------------------------------
+  Custom Properties to Sync with Main Site
+--------------------------------------------------*/
+:root {
+    --heading-font: 'Montserrat', sans-serif;
+    --tagline-font: 'IBM Plex Sans', sans-serif;
+    --epk-bg: #191819;
+    --epk-section-bg: #000000;
+    --epk-overlay: rgba(13, 13, 13, 0.85);
+    --epk-text-color: #777777;
+    --epk-accent: #999999;
+  }
+  
+  /*--------------------------------------------------
+    Page Section Base (inherits from style.css)
+  --------------------------------------------------*/
+  .page-section {
+    min-height: 60vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--epk-section-bg);
+    color: var(--epk-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /*--------------------------------------------------
+    Hero Section: Leverage Main Site's Style with Custom Background
+  --------------------------------------------------*/
+  #home {
+    background: url('images/molly-hero.jpg') center center / cover no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  #home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--epk-overlay);
+    z-index: 1;
+  }
+  #heroLogo {
+    max-height: 25rem;
+  }
+  .tagline {
+    font-family: var(--tagline-font);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+  }
+  
+  /*--------------------------------------------------
+    Two-Column Layout for Content Sections
+  --------------------------------------------------*/
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+  }
+  @media (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-grid .text {
+    text-align: left;
+  }
+  .content-grid img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+  .content-grid img:hover {
+    transform: scale(1.05);
+  }
+
+
+  /* Modal Styles */
+.epkModal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.epkModalContent {
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Close Button for Modal */
+.epkClose-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Read More Link Styling */
+.read-more-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #EBD9A3;
+}
+
+  
+  /*--------------------------------------------------
+    Embedded Media Styling
+  --------------------------------------------------*/
+  .epk-spotify-embed,
+  .youtube-embed {
+    width: 100% !important;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    display: block;
+    border: none;
+    border-radius: 12px;
+  }
+  
+  /*--------------------------------------------------
+    Upcoming Release: Cover Art Styling
+  --------------------------------------------------*/
+  .cover-art {
+    width: 100%;
+    max-width: 400px;
+  }
+  .cover-art img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+  .cover-art img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Ensure the link is treated as an inline-block for proper hover effects */
+.cover-art a {
+  display: inline-block;
+}
+
+/* Add a smooth transition for the glow effect */
+.cover-art a img {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Glow effect on hover */
+.cover-art a:hover img {
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+
+  .youtube-embed {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border: none;
+    border-radius: 12px;
+  }
+  
+
+/* Carousel Container */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Carousel Images Container */
+.carousel-images {
+  position: relative;
+}
+
+/* Each Carousel Image */
+.carousel-image {
+  width: 100%;
+  max-height: 400px; /* Ensures tall images don't break the layout */
+  object-fit: contain; /* This makes sure images of various ratios display nicely */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: none; /* Hide all images by default */
+}
+
+/* Active Image */
+.carousel-image.active {
+  display: block;
+}
+
+/* Navigation Buttons */
+.carousel button.prev,
+.carousel button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.carousel button.prev {
+  left: 10px;
+}
+
+.carousel button.next {
+  right: 10px;
+}
+
+/* Lightbox Styles (from your provided code) */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+  
+  
+  /*--------------------------------------------------
+    Social Icons Section
+  --------------------------------------------------*/
+/* Narrower, compact socials section */
+#socials {
+  min-height: 40vh;              
+  padding: 2rem 1rem;            
+}
+
+/* Ensure the social icons remain consistent with the header icons */
+#socials .epk-socials-centered {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Keeps them nicely spaced */
+}
+
+#socials .epk-socials-centered a {
+  text-decoration: none; /* Remove any underlines */
+}
+
+#socials .epk-socials-centered img {
+  height: 3rem !important; /* Force a consistent, smaller size */
+  width: auto;
+  padding-bottom: 25%;
+}
+
+  /*--------------------------------------------------
+    Footer Adjustments (if needed)
+  --------------------------------------------------*/
+  footer {
+    padding: 1rem;
+    text-align: center;
+    color: #F5F5F5;
+    background-color: #000000;
+    width: 100%;
+  }
+  

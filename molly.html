@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Molly Devine</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- EPK-specific tweaks -->
+  <link rel="stylesheet" href="epk.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Site Navigation -->
+  <header>
+    <nav class="main-nav">
+      <a href="https://www.facebook.com/molly.devine.18" target="_blank"><img src="images/FB.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/mollydevinemusic" target="_blank"><img src="images/IG.png" alt="Instagram"></a>
+      <a href="https://www.tiktok.com/@mollydevinenz" target="_blank"><img src="images/TT.png" alt="TikTok"></a>
+      <a href="https://www.youtube.com/@mollydevine6756" target="_blank"><img src="images/YT.png" alt="YouTube"></a>
+      <a href="https://open.spotify.com/artist/3an2TOobY5d1MvALIGYe70" target="_blank"><img src="images/SP.png" alt="Spotify"></a>
+    </nav>
+  </header>
+  
+  <!-- Hero Section: Uses same ID and classes as your main page -->
+  <section id="home" class="page-section">
+    <div class="hero-content">
+      <!-- Replace the inline background image URL in epk.css as needed -->
+      <img id="heroLogo" src="images/MollyLogoYellow.png">
+    </div>
+  </section>
+  
+<!-- About Section with Short Bio and "Read More" Link -->
+<section id="about" class="page-section">
+  <h2>About Molly</h2>
+  <div class="content-grid">
+    <div class="text">
+      <p>
+        Molly Devine is a vibrant singer, songwriter, and DJ from Aotearoa New Zealand, blending soulful depth with uplifting energy. Known for her heartfelt lyrics and dynamic performances, she brings sparkle wherever she goes.
+      </p>
+      <a href="javascript:void(0)" id="readMoreLink" class="read-more-link">Read more</a>
+    </div>
+    <div class="image">
+      <img src="images/molly3.jpg" alt="Molly Devine">
+    </div>
+  </div>
+</section>
+
+<!-- Bio Modal -->
+<div id="artistModal" class="epkModal">
+  <div class="epkModalContent">
+    <span class="close-btn">&times;</span>
+    <div class="epk-modal-body">
+      <p>
+        Molly Devine is a vibrant singer, songwriter, and DJ known for her soulful voice, heartfelt lyrics, and dynamic live performances. Based in Aotearoa New Zealand, Molly’s music blends rich emotional depth with uplifting energy, capturing both the joy and vulnerability of life.
+      </p>
+      <p>
+        With a Master’s in Music Performance and years of experience as a recording artist and performer, Molly has toured nationally, supporting legendary acts like Anastacia, The Doobie Brothers, Creedence Clearwater Revival, and Billy Idol. She’s also performed alongside New Zealand music icons Martin Phillips (The Chills), Shayne Carter (Straitjacket Fits), Graeme Downes (The Verlaines), Nadia Reid, and Anthonie Tonnon in the celebrated Dunedin Sound production, Tally Ho! with the Dunedin Symphony Orchestra.
+      </p>
+      <p>
+        Molly’s latest single, To Be, dives into the raw tension between striving for success and embracing self-acceptance, exploding into a euphoric chorus of self-love and freedom. She’s now gearing up to release Good Vibes Only, a chill, soulful anthem about moving on from heartbreak into a brighter, lighter state of being.
+      </p>
+      <p>
+        Molly has collaborated with acclaimed producers Greg Haver, Nik Brinkman, and Will Henderson, while also embracing her skills as a self-producer, crafting music that resonates with authenticity and warmth.
+      </p>
+      <p>
+        Off-stage, Molly is a thoughtful, passionate creative who brings warmth and authenticity to everything she does. She brings warmth, positivity, and a touch of sparkle wherever she goes — and yes, she’s probably singing while she does it.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Listen on Spotify Section -->
+<section id="spotify" class="page-section">
+  <h2>Listen on Spotify</h2>
+  <iframe class="epk-spotify-embed" src="https://open.spotify.com/embed/artist/3an2TOobY5d1MvALIGYe70?utm_source=generator&theme=0" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</section>
+
+<!-- Watch on YouTube Section -->
+<section id="video" class="page-section">
+  <h2>Watch on YouTube</h2>
+  <iframe class="youtube-embed" src="https://www.youtube.com/embed/iGRtaepz0FY?si=jkJHUQevWcRKonpG" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+  
+<!-- Upcoming Release Section -->
+<section id="release" class="page-section">
+  <h2>New Release</h2>
+  <div class="cover-art">
+    <a href="https://labelmachine.lnk.to/GoodVibesOnly" target="_blank">
+      <img src="images/Molly6.jpg" alt="Cover artwork for Good Vibes">
+    </a>
+  </div>
+</section>
+
+
+<!-- Professional Images Gallery Section -->
+<section id="gallery" class="page-section">
+  <div class="carousel">
+    <button class="prev">&#10094;</button>
+    <div class="carousel-images">
+      <img src="images/IMG_5952.JPG" alt="Molly Professional Image 1" class="carousel-image">
+      <img src="images/IMG_5982.JPG" alt="Molly Professional Image 2" class="carousel-image">
+      <img src="images/IMG_5754.JPG" alt="Molly Professional Image 3" class="carousel-image">
+      <img src="images/molly2.jpg" alt="Molly Professional Image 4" class="carousel-image">
+      <img src="images/molly-hero.JPG" alt="Molly Professional Image 5" class="carousel-image">
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<!-- Lightbox for expanded view -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Expanded view">
+</div>
+
+
+  
+  <!-- Socials Section -->
+  <section id="socials" class="page-section">
+    <h2>Connect with Molly</h2>
+    <div class="epk-socials-centered">
+      <a href="https://www.facebook.com/molly.devine.18" title="Facebook" target="_blank">
+        <img src="images/FB.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/mollydevinemusic" title="Instagram" target="_blank">
+        <img src="images/IG.png" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@mollydevinenz" title="TikTok" target="_blank">
+        <img src="images/TT.png" alt="TikTok">
+      </a>
+      <a href="https://www.youtube.com/@mollydevine6756" title="YouTube" target="_blank">
+        <img src="images/YT.png" alt="YouTube">
+      </a>
+      <a href="https://open.spotify.com/artist/3an2TOobY5d1MvALIGYe70" title="Spotify" target="_blank">
+        <img src="images/SP.png" alt="Spotify">
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>Contact us: <a href="mailto:admin@timelessrecords.nz">admin@timelessrecords.nz</a></p>
+    <p>&copy; 2025 Timeless Records</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.carousel-image');
+      let currentIndex = 0;
+      const prevButton = document.querySelector('.carousel button.prev');
+      const nextButton = document.querySelector('.carousel button.next');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      
+      // Function to display the active image
+      function showImage(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === index);
+        });
+      }
+    
+      // Initial display
+      showImage(currentIndex);
+    
+      // Previous button click
+      prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        showImage(currentIndex);
+      });
+    
+      // Next button click
+      nextButton.addEventListener('click', function() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        showImage(currentIndex);
+      });
+    
+      // Open lightbox on image click
+      images.forEach((img) => {
+        img.addEventListener('click', function() {
+          lightboxImg.src = img.src;
+          lightbox.style.display = 'flex';
+        });
+      });
+    
+      // Close lightbox on click
+      lightbox.addEventListener('click', function() {
+        lightbox.style.display = 'none';
+      });
+
+  // Corrected modal reference – using the id from your HTML
+var epkModal = document.getElementById('artistModal');
+var readMoreLink = document.getElementById('readMoreLink');
+var closeBtn = epkModal.querySelector('.close-btn');
+
+// Open modal when "read more" link is clicked
+readMoreLink.addEventListener('click', function() {
+  epkModal.style.display = 'flex';
+});
+
+// Close modal when close button is clicked
+closeBtn.addEventListener('click', function() {
+  epkModal.style.display = 'none';
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', function(e) {
+  if (e.target === epkModal) {
+    epkModal.style.display = 'none';
+  }
+});
+
+  });
+  </script>
+  
+    
+  
+  <script src="script.js"></script>
+</body>
+</html>

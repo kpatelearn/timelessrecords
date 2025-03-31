@@ -226,6 +226,22 @@ header.hidden {
 
 #about {
     font-size: 1.15rem;
+    color: #999999;
+} 
+
+#artists {
+    font-size: 1.15rem;
+    color: #999999;
+} 
+
+#music {
+    font-size: 1.15rem;
+    color: #999999;
+}
+
+#shop {
+    font-size: 1.15rem;
+    color: #999999;
 }
 
 .artist-gallery {
