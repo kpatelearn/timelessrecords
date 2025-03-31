@@ -36,7 +36,7 @@ body {
 }
 
 #home {
-    background: url('images/molly-hero5.jpg') no-repeat center center;
+    background: url('images/molly-hero2.JPG') no-repeat center center;
     background-size: cover;
     background-color: var(--bg-color); /* fallback in case image fails */
     min-height: 100vh;
