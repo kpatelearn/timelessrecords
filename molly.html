@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Molly Devine</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon_round.ico">
   <!-- Main site styles -->
   <link rel="stylesheet" href="style.css">
   <!-- EPK-specific tweaks -->
@@ -188,28 +188,6 @@
       lightbox.addEventListener('click', function() {
         lightbox.style.display = 'none';
       });
-
-  // Corrected modal reference – using the id from your HTML
-var epkModal = document.getElementById('artistModal');
-var readMoreLink = document.getElementById('readMoreLink');
-var closeBtn = epkModal.querySelector('.close-btn');
-
-// Open modal when "read more" link is clicked
-readMoreLink.addEventListener('click', function() {
-  epkModal.style.display = 'flex';
-});
-
-// Close modal when close button is clicked
-closeBtn.addEventListener('click', function() {
-  epkModal.style.display = 'none';
-});
-
-// Close modal when clicking outside the modal content
-window.addEventListener('click', function(e) {
-  if (e.target === epkModal) {
-    epkModal.style.display = 'none';
-  }
-});
 
   });
   </script>

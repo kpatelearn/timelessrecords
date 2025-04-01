@@ -122,6 +122,27 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
 
+/* Make Molly modal content responsive */
+#mollyModal .modal-content {
+  width: 95%;
+  max-width: 500px;
+  height: 80vh;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make iframe fill the modal and be responsive */
+#mollyModal iframe {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
 /* Close Button for Modal */
 .epkClose-btn {
   position: absolute;
@@ -304,6 +325,25 @@
   transition: opacity 0.3s ease;
 }
 
+#mollyModal .modal-content {
+  width: 100%;
+  max-width: 500px;
+  height: 400px; /* enough to show most forms */
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+#mollyModal iframe {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 #mollyModal.active {
   opacity: 1;
   pointer-events: all;
@@ -335,6 +375,7 @@
   .epk-socials-centered a img {
       height: 2rem;
   }
+
 }
 
 @media (max-width: 360px) {
