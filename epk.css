@@ -297,6 +297,22 @@
   gap: 1rem; /* Adjust the value as needed */
 }
 
+#mollyModal {
+  display: flex !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#mollyModal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#connectMolly {
+  cursor: pointer;
+}
+
 
 @media (max-width: 360px) {
   #socials .epk-socials-centered img {
