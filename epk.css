@@ -93,6 +93,11 @@
     transform: scale(1.05);
   }
 
+  .epkModal.active {
+    display: flex;
+  }
+  
+
 
   /* Modal Styles */
 .epkModal {

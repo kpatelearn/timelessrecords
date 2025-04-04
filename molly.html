@@ -192,7 +192,29 @@
   });
   </script>
   
-    
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const readMoreLink = document.getElementById('readMoreLink');
+  const artistModal = document.getElementById('artistModal');
+  const closeBtn = artistModal.querySelector('.close-btn');
+  
+  readMoreLink.addEventListener('click', () => {
+    artistModal.classList.add('active');
+  });
+  
+  closeBtn.addEventListener('click', () => {
+    artistModal.classList.remove('active');
+  });
+  
+  // Optionally, clicking outside the modal content closes the modal.
+  window.addEventListener('click', (e) => {
+    if (e.target === artistModal) {
+      artistModal.classList.remove('active');
+    }
+  });
+});
+
+  </script>
   
   <script src="script.js"></script>
 
@@ -235,11 +257,6 @@
     });
   });
 </script>
-
-
-
-
-
 
 </body>
 </html>
