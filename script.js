@@ -55,6 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    const presaveMolly = document.getElementById("presaveMolly");
+
+if (presaveMolly) {
+  presaveMolly.addEventListener("click", () => {
+    window.open("https://labelmachine.lnk.to/GoodVibesOnly", "_blank");
+  });
+}
+
+
     const signupButton = document.getElementById("signupButton");
 if (signupButton) {
   signupButton.addEventListener("click", () => {

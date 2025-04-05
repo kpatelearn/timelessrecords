@@ -366,6 +366,21 @@ header.hidden {
   .page-section + .page-section {
     margin-top: 2rem; /* reduce from default padding if necessary */
   }
+
+  .presave-link {
+    color: #EBD9A3;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding: 0 0.3rem;
+  }
+  
+  .presave-link:hover {
+    color: #e6e6e5;
+    text-shadow: 0 0 8px rgba(235, 217, 163, 0.9);
+  }
+  
   
 
 .green-room-link:hover {
