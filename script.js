@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     artistMolly.style.cursor = 'pointer';
     artistMolly.addEventListener('click', openMolly);
     function openMolly() {
-      window.open('https://labelmachine.lnk.to/GoodVibesOnly');
+      window.location.href = "http://timelessrecords.nz/molly.html"
     }
   
     // Mobile-specific adjustments
