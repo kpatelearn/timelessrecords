@@ -54,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    const signupButton = document.getElementById("signupButton");
+if (signupButton) {
+  signupButton.addEventListener("click", () => {
+    openModal();
+  });
+}
+
   
     // Green Room Modal functionality
     const openModal = () => {
