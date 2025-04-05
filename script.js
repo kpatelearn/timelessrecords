@@ -177,6 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHeaderFooterVisibility();
       });
     }
+
+    const artistMolly = document.getElementById("artistMolly");
+    artistMolly.style.cursor = 'pointer';
+    artistMolly.addEventListener('click', openMolly);
+    function openMolly() {
+      window.open('https://labelmachine.lnk.to/GoodVibesOnly');
+    }
   
     // Mobile-specific adjustments
     if (window.matchMedia('(pointer: coarse)').matches) {

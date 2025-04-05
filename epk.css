@@ -96,6 +96,10 @@
   .epkModal.active {
     display: flex;
   }
+
+  #artistMolly {
+    cursor: pointer;
+  }
   
 
 
