@@ -70,7 +70,7 @@ body {
 }
 
 .hero-image-wrapper {
-    width: 33.3333%;
+    width: 40%;
     padding: 0 1vw;
 }
 
@@ -196,7 +196,7 @@ header.hidden {
 }
 
 .main-nav a img {
-    height: 3rem;
+    height: 2.5rem;
     width: auto;
     transition: filter 0.4s ease, transform 0.3s ease;
 }
@@ -207,7 +207,7 @@ header.hidden {
 }
 
 .main-nav a:not(:first-child) {
-    margin-left: 2rem;
+    margin-left: 1.6rem;
 }
 
 .parallax-logo {
@@ -421,14 +421,14 @@ footer.hidden {
 /* Rest of media queries remain unchanged */
 @media (max-aspect-ratio: 3/4) {
     .hero-image-wrapper {
-        width: 90%;
+        width: 95%;
         padding: 0 1rem;
     }
 }
 
 @media (min-aspect-ratio: 16/9) {
     .hero-image-wrapper {
-        width: 30%;
+        width: 35%;
     }
 }
 
