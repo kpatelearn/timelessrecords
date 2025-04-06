@@ -253,7 +253,30 @@ if (signupButton) {
       }
     });
     
-    
+    const aboutBtn = document.getElementById("aboutMoreBtn");
+const aboutModal = document.getElementById("aboutModal");
+const aboutClose = aboutModal ? aboutModal.querySelector(".close-btn") : null;
+
+if (aboutBtn) {
+  aboutBtn.addEventListener("click", () => {
+    aboutModal.classList.add("active");
+  });
+}
+
+if (aboutClose) {
+  aboutClose.addEventListener("click", () => {
+    aboutModal.classList.remove("active");
+  });
+}
+
+if (aboutModal) {
+  window.addEventListener("click", (e) => {
+    if (e.target === aboutModal) {
+      aboutModal.classList.remove("active");
+    }
+  });
+}
+
   
     // Initial check
     updateHeaderFooterVisibility();

@@ -413,13 +413,16 @@ header.hidden {
 .modal-content {
     background-color: var(--bg-color);
     border-radius: 20px;
-    padding: 1rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
     width: 90%;
     max-width: 600px;
-    height: 450px;
+    max-height: 90vh; /* So the modal doesn't spill offscreen */
+    display: flex;
+    flex-direction: column;
     position: relative;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-}
+    overflow: hidden; /* Prevents scrollbars from messing with layout */
+  }
 
 @keyframes popIn {
     from {
@@ -517,6 +520,61 @@ footer.hidden {
     opacity: 0 !important;
     transition: opacity 0.3s ease;
 }
+
+/* Modal Scroll Styling */
+.modal-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 1rem;
+    scroll-behavior: smooth;
+    margin-top: 2.5rem; /* Pushes text below close button */
+  }
+  
+  .modal-scrollable p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .modal-scrollable h2 {
+    color: #EBD9A3;
+    margin-top: 0;
+  }
+  
+  .modal-scrollable h3 {
+    margin-top: 1.5rem;
+    color: #EBD9A3;
+  }
+  
+  /* Close Button Top-Right Styling */
+  .close-btn-top {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #EBD9A3;
+    cursor: pointer;
+    z-index: 100;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+  
+  
+  .close-btn-top:hover {
+    color: #ffffff;
+  }
+  
+  /* Fix contrast for gold button background */
+  .signup-button {
+    background-color: #EBD9A3;
+    color: #191819;
+  }
+  
+  .signup-button:hover {
+    background-color: #ffffff;
+    color: #191819 !important;
+  }
+  
 
 /* Media queries remain the same */
 @media (max-width: 600px) {
