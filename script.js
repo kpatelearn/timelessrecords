@@ -88,7 +88,8 @@ if (signupButton) {
   
     if (heroLogo) {
       heroLogo.addEventListener("click", () => {
-        openModal();
+        //openModal();
+        window.open("https://labelmachine.lnk.to/GoodVibesOnly", "_blank");
       });
     }
   
