@@ -64,40 +64,6 @@
   </div>
 </div>
 
-<section id="spotify" class="page-section">
-  <h2>Listen on Spotify</h2>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5mykZdkyXIJNrmULYGk4x0?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</section>
-
-<section id="video" class="page-section">
-  <div class="video-container">
-    <div class="video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/v1CG4KXCVck?si=bw-HiVmmbCJOqleE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    
-    <div class="video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/RMso9OeKrcM?si=z_5o8-kc3nRQ4pHq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    
-    <div class="video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/1CMMPrhcjZQ?si=gqexyy0TTQ5PrqWa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    
-    </div>
-    
-  </div>
-
-  <div class="cta-button" style="text-align:center; margin-top:1.5rem;">
-    <a href="https://www.youtube.com/@maddylmusic" class="button" target="_blank">
-      Explore More on YouTube
-    </a>
-  </div>
-</section>
-
-
-
-  
-
 <section id="release" class="page-section">
   <h2>New Release</h2>
   <div class="cover-art">
@@ -107,7 +73,61 @@
   </div>
 </section>
 
-<section id="gallery" class="page-section">
+<section id="spotify" class="page-section">
+  <h2>Listen on Spotify</h2>
+  <div class="spotify-wrapper">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5mykZdkyXIJNrmULYGk4x0?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section id="video" class="page-section">
+  <h2>Watch Maddy</h2>
+  <div class="video-container">
+    <div class="video-card">
+      <div class="iframe-wrapper">
+        <iframe src="https://www.youtube.com/embed/v1CG4KXCVck?si=bw-HiVmmbCJOqleE" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="iframe-wrapper">
+        <iframe src="https://www.youtube.com/embed/RMso9OeKrcM?si=z_5o8-kc3nRQ4pHq" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="iframe-wrapper">
+        <iframe src="https://www.youtube.com/embed/1CMMPrhcjZQ?si=gqexyy0TTQ5PrqWa" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-button" style="text-align:center; margin-top:1.5rem;">
+    <a href="https://www.youtube.com/@maddylmusic" class="button" target="_blank">
+      Explore More on YouTube
+    </a>
+  </div>
+</section>
+
+<section id="gallery" class="page-section section-tight">
   <div class="carousel">
     <button class="prev">&#10094;</button>
     <div class="carousel-images">
@@ -152,7 +172,7 @@
   <p>&copy; 2025 Timeless Records</p>
 </footer>
 
-<script src="script.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       const images = document.querySelectorAll('.carousel-image');
