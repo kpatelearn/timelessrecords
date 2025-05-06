@@ -86,12 +86,7 @@ if (signupButton) {
       });
     }
   
-    if (heroLogo) {
-      heroLogo.addEventListener("click", () => {
-        //openModal();
-        window.open("https://labelmachine.lnk.to/GoodVibesOnly", "_blank");
-      });
-    }
+  
   
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {

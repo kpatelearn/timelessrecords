@@ -26,9 +26,9 @@
   </div>
 </section>
 
-<section id="about" class="page-section">
+<section id="about" class="page-section" >
   <h2>About Maddy</h2>
-  <div class="content-grid">
+  <div class="content-grid stacked-about">
     <div class="text">
       <p>
         Maddy Low is a versatile musician, songwriter and performer. Described as a born performer by many she meets, Maddy has a knack for grabbing attention and pulling an audience in. Based in Wellington and Auckland, she brings an undeniable energy and meaningfulness into each song she writes.
@@ -197,6 +197,13 @@
         currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
         showImage(currentIndex);
       });
+
+      if (heroLogo) {
+      heroLogo.addEventListener("click", () => {
+        //openModal();
+        window.open("https://nfan.link/maddy-low", "_blank");
+      });
+    }
     
       // Next button click
       nextButton.addEventListener('click', function() {
@@ -246,18 +253,6 @@
   
   <script src="script.js"></script>
 
-<!-- Molly's Custom Modal -->
-<div id="mollyModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <iframe
-      src="https://api.leadconnectorhq.com/widget/form/TULtYPZjDJowe32a3aI3"
-      style="width:100%; height:100%; border:none; border-radius:20px;"
-      title="KP Form - Molly"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -268,7 +263,7 @@
 
     mollyLogo.addEventListener("click", () => {
       //mollyModal.classList.add("active");
-      window.open('https://labelmachine.lnk.to/GoodVibesOnly');
+      window.open('https://nfan.link/maddy-low');
     });
 
     connectMolly.addEventListener("click", () => {

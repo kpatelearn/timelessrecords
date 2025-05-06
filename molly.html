@@ -160,6 +160,13 @@
           img.classList.toggle('active', i === index);
         });
       }
+
+      if (heroLogo) {
+      heroLogo.addEventListener("click", () => {
+        //openModal();
+        window.open("https://labelmachine.lnk.to/GoodVibesOnly", "_blank");
+      });
+    }
     
       // Initial display
       showImage(currentIndex);
