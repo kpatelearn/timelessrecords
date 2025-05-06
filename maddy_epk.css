@@ -322,7 +322,7 @@ body.artist-maddy #heroLogo:hover {
 }
 
 /* ---------- Modals ---------- */
-.epkModal, .lightbox, .modal {
+.epkModal, .modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
@@ -423,6 +423,28 @@ body.artist-maddy #heroLogo:hover {
 
 #about .stacked-about .text {
   max-width: 700px;
+}
+
+/* ——— Lightbox (click-to-expand) ——— */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 
