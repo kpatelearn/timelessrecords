@@ -140,7 +140,6 @@
 
   <!-- External script for the form (from LeadConnector) -->
   <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-  <script src="script.js"></script>
 
     <!-- Green Room Modal -->
     <div id="greenRoomModal" class="modal">
@@ -183,6 +182,22 @@
     </div>
   </div>
 </div>
+
+<script src="script.js"></script>
+
+<script>
+   const shopTitle = document.getElementById('shop-title');
+
+shopTitle.addEventListener('click', function () {
+  if (shopTitle.textContent === 'Shop') {
+    shopTitle.textContent = 'Coming Soon';
+    shopTitle.classList.add('clicked');
+  } else {
+    shopTitle.textContent = 'Shop';
+    shopTitle.classList.remove('clicked');
+  }
+});
+</script>
 
 </body>
 </html>

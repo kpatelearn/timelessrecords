@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let isHoveringFooterZone = false;
     let isHoveringFooter = false;
     let ticking = false;
+
+   
+    heroLogo.style.cursor = 'pointer';
+    heroLogo.addEventListener('click', openHero);
+    function openHero() {
+      window.location.href = "https://nfan.link/maddy-low"
+    }
   
     // Make sure all scroll containers are properly configured on page load
     function ensureNoNestedScrolling() {
@@ -237,17 +244,7 @@ if (signupButton) {
       }
     });
 
-    const shopTitle = document.getElementById('shop-title');
-
-    shopTitle.addEventListener('click', function () {
-      if (shopTitle.textContent === 'Shop') {
-        shopTitle.textContent = 'Coming Soon';
-        shopTitle.classList.add('clicked');
-      } else {
-        shopTitle.textContent = 'Shop';
-        shopTitle.classList.remove('clicked');
-      }
-    });
+   
     
     const aboutBtn = document.getElementById("aboutMoreBtn");
 const aboutModal = document.getElementById("aboutModal");
