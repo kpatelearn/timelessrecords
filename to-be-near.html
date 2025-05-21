@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maddy Low – To Be Near</title>
+  <meta name="description" content="Listen to Maddy Low's new single 'To Be Near' – out now on Timeless Records.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #191819;
+      --text-color: #777777;
+      --accent-color: #EBD9A3;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cover-art {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(235, 217, 163, 0.25);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+      color: var(--accent-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .button {
+      display: inline-block;
+      margin: 0.5rem 0.4rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    iframe {
+      margin-top: 2.5rem;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(235, 217, 163, 0.15);
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: var(--bg-color);
+      border-radius: 20px;
+      padding: 1rem;
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 2rem;
+      color: var(--text-color);
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img class="cover-art" src="images/MaddyTobenear.jpg" alt="To Be Near Cover Art" />
+
+  <h1>To Be Near – Maddy Low</h1>
+  <p>New single out now via Timeless Records</p>
+
+  <a class="button" href="https://timelessrecords.nz/play.html?type=track&id=41a4u7k1qElUrR5T2toecE" target="_blank">🎧 Listen on Spotify</a>
+  <a class="button" href="https://www.youtube.com/watch?v=1CMMPrhcjZQ&ab" target="_blank">📺 Watch the Music Video</a>
+  <button class="button" onclick="openGreenRoom()">💌 Join the Mailing List</button>
+
+  <iframe 
+    src="https://open.spotify.com/embed/track/41a4u7k1qElUrR5T2toecE?utm_source=generator" 
+    width="300" height="80"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+
+  <!-- Green Room Modal -->
+  <div id="greenRoomModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeGreenRoom()">&times;</span>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
+        style="width:100%;height:100%;border:none;border-radius:20px"
+        id="inline-9ipFqnn8PAzpysxstTRH"
+        title="Green Room Form">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- LeadConnector Script -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <script>
+    function openGreenRoom() {
+      document.getElementById('greenRoomModal').classList.add('active');
+    }
+
+    function closeGreenRoom() {
+      document.getElementById('greenRoomModal').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
