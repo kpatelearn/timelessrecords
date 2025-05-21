@@ -48,20 +48,24 @@
     }
 
     .button {
-      display: inline-block;
-      margin: 0.5rem 0.4rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent-color);
-      color: var(--bg-color);
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
+  display: block; /* 👈 change this from inline-block to block */
+  margin: 0.5rem auto; /* centers the button horizontally */
+  padding: 0.75rem 1.5rem;
+  width: 240px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+
 
     .button:hover {
       background-color: #ffffff;
@@ -149,7 +153,7 @@
 
   <a class="button" id="spotifyBtn" href="https://timelessrecords.nz/play.html?type=track&id=0IIUmZ380JxdAnOl08IA8H" target="_blank">🎧 Listen on Spotify</a>
   <a class="button" href="https://youtu.be/KO5-6CDxaF8?si=ghVjhzTcnj05Bxd3" target="_blank">📺 Watch the Music Video</a>
-  <button class="button" onclick="openGreenRoom()">💌 Join the Mailing List</button>
+  <button class="button" onclick="openGreenRoom()">💌 Subscribe </button>
 
   <iframe 
     src="https://open.spotify.com/embed/track/0IIUmZ380JxdAnOl08IA8H?utm_source=generator" 
