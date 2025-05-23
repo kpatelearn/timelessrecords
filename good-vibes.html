@@ -152,8 +152,11 @@
   <p>New single out now via Timeless Records</p>
 
   <a class="button" id="spotifyBtn" href="https://timelessrecords.nz/play.html?type=track&id=0IIUmZ380JxdAnOl08IA8H" target="_blank">🎧 Listen on Spotify</a>
-  <a class="button" href="https://youtu.be/KO5-6CDxaF8?si=ghVjhzTcnj05Bxd3" target="_blank">📺 Watch the Music Video</a>
-  <button class="button" onclick="openGreenRoom()">💌 Subscribe </button>
+
+  <a class="button" id="youtubeBtn" href="https://youtu.be/KO5-6CDxaF8?si=ghVjhzTcnj05Bxd3" target="_blank">📺 Watch the Music Video</a>
+  
+  <button class="button" id="subscribeBtn">💌 Subscribe</button>
+  
 
   <iframe 
     src="https://open.spotify.com/embed/track/0IIUmZ380JxdAnOl08IA8H?utm_source=generator" 
@@ -175,23 +178,46 @@
     </div>
   </div>
 
-  <!-- LeadConnector Script -->
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-  <script>
-    function openGreenRoom() {
-      document.getElementById('greenRoomModal').classList.add('active');
-    }
-
-    function closeGreenRoom() {
-      document.getElementById('greenRoomModal').classList.remove('active');
-    }
-  </script>
+<!-- LeadConnector Script -->
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
 <script>
-    document.getElementById('spotifyBtn').addEventListener('click', function() {
-      fbq('track', 'Lead'); // You can change 'Lead' to another standard or custom event
+  function openGreenRoom() {
+    document.getElementById('greenRoomModal').classList.add('active');
+  }
+
+  function closeGreenRoom() {
+    document.getElementById('greenRoomModal').classList.remove('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Spotify Button Click Tracking
+    document.getElementById('spotifyBtn').addEventListener('click', function (e) {
+      e.preventDefault(); // prevent immediate navigation
+      fbq('trackCustom', 'Click_Spotify');
+      setTimeout(() => {
+        window.open(this.href, '_blank');
+      }, 200);
     });
-  </script>
+
+    // YouTube Button Click Tracking
+    document.getElementById('youtubeBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      fbq('trackCustom', 'Click_YouTube');
+      setTimeout(() => {
+        window.open(this.href, '_blank');
+      }, 200);
+    });
+
+    // Subscribe Button Click Tracking
+    document.getElementById('subscribeBtn').addEventListener('click', function () {
+      fbq('trackCustom', 'Click_Subscribe');
+      openGreenRoom();
+    });
+  });
+</script>
+
+
   
 
 </body>
