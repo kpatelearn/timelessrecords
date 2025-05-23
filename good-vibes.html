@@ -154,8 +154,7 @@
   <a class="button" id="spotifyBtn" href="https://timelessrecords.nz/play.html?type=track&id=0IIUmZ380JxdAnOl08IA8H" target="_blank">🎧 Listen on Spotify</a>
 
   <a class="button" id="youtubeBtn" href="https://youtu.be/KO5-6CDxaF8?si=ghVjhzTcnj05Bxd3" target="_blank">📺 Watch the Music Video</a>
-  
-  <button class="button" id="subscribeBtn">💌 Subscribe</button>
+
   
 
   <iframe 
@@ -165,31 +164,8 @@
     loading="lazy">
   </iframe>
 
-  <!-- Green Room Modal -->
-  <div id="greenRoomModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeGreenRoom()">&times;</span>
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
-        style="width:100%;height:100%;border:none;border-radius:20px"
-        id="inline-9ipFqnn8PAzpysxstTRH"
-        title="Green Room Form">
-      </iframe>
-    </div>
-  </div>
-
-<!-- LeadConnector Script -->
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
 <script>
-  function openGreenRoom() {
-    document.getElementById('greenRoomModal').classList.add('active');
-  }
-
-  function closeGreenRoom() {
-    document.getElementById('greenRoomModal').classList.remove('active');
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
     // Spotify Button Click Tracking
     document.getElementById('spotifyBtn').addEventListener('click', function (e) {
@@ -209,11 +185,6 @@
       }, 200);
     });
 
-    // Subscribe Button Click Tracking
-    document.getElementById('subscribeBtn').addEventListener('click', function () {
-      fbq('trackCustom', 'Click_Subscribe');
-      openGreenRoom();
-    });
   });
 </script>
 
