@@ -108,6 +108,8 @@ if (signupButton) {
         }
       });
     }
+
+   
   
     // Hero image interactions
     if (heroSection) {
@@ -128,6 +130,8 @@ if (signupButton) {
         }
       });
     }
+
+   
   
     // Improved intersection observer with lower threshold for smoother transitions
     const sections = document.querySelectorAll('.page-section');

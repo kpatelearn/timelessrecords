@@ -55,6 +55,9 @@ body {
     z-index: 1;
 }
 
+
+
+
 .hero-content img {
     width: 100%;
     max-width: 100%;
@@ -219,10 +222,12 @@ header.hidden {
     text-align: center;
 }
 
+
 .hero-content img {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}  
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
 
 #about {
     font-size: 1.15rem;
