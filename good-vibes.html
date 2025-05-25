@@ -4,125 +4,363 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Molly Devine – Good Vibes Only</title>
-  <meta name="description" content="Listen to Maddy Low's new single 'To Be Near' – out now on Timeless Records.">
-  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <meta name="description" content="Listen to Molly Devine's new single 'Good Vibes Only' – out now on Timeless Records.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon_round.ico">
   <style>
-    :root {
-      --bg-color: #191819;
-      --text-color: #777777;
-      --accent-color: #EBD9A3;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Lora', serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .cover-art {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 20px rgba(235, 217, 163, 0.25);
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.3rem;
-      color: var(--accent-color);
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-color);
-    }
-
-    .button {
-  display: block; /* 👈 change this from inline-block to block */
-  margin: 0.5rem auto; /* centers the button horizontally */
-  padding: 0.75rem 1.5rem;
-  width: 240px;
-  background: var(--accent-color);
-  color: var(--bg-color);
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-align: center;
+:root {
+  --primary-gradient: linear-gradient(135deg, #FF6B9D 0%, #F73B7A 100%);
+  --secondary-gradient: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+  --accent-gradient: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+  --neon-pink: #FF6B9D;
+  --neon-coral: #FF8A95;
+  --cyber-teal: #4ECDC4;
+  --electric-blue: #45B7D1;
+  --dark-bg: #1a1a2e;
+  --card-bg: rgba(26, 26, 46, 0.85);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(255, 107, 157, 0.2);
+  --shadow-primary: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-secondary: 0 10px 20px rgba(0, 0, 0, 0.4);
+  --glow: 0 0 30px rgba(255, 107, 157, 0.4);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
 
-    .button:hover {
-      background-color: #ffffff;
-      color: #000000;
-    }
+/* Blurred background with cover art */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background-image: url('images/Molly6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(25px) brightness(0.4) saturate(1.2);
+  z-index: -1;
+  transform: scale(1.1);
+}
 
-    iframe {
-      margin-top: 2.5rem;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(235, 217, 163, 0.15);
-    }
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-    }
+/* Main content block */
+.content-block {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  margin: 1rem;
+  box-shadow: var(--shadow-primary);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
 
-    .modal.active {
-      display: flex;
-    }
+.content-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 107, 157, 0.1) 0%, 
+    rgba(78, 205, 196, 0.05) 50%, 
+    rgba(255, 107, 157, 0.1) 100%);
+  border-radius: 24px;
+  pointer-events: none;
+}
 
-    .modal-content {
-      background-color: var(--bg-color);
-      border-radius: 20px;
-      padding: 1rem;
-      width: 90%;
-      max-width: 600px;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
+/* Header section */
+.header {
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out;
+}
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 2rem;
-      color: var(--text-color);
-      cursor: pointer;
-    }
+.artist-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
 
-    @media (max-width: 600px) {
-      iframe {
-        width: 100%;
-      }
-    }
+.song-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.record-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Cover art section */
+.cover-section {
+  margin-bottom: 3rem;
+  position: relative;
+  animation: fadeInScale 1.2s ease-out 0.3s both;
+}
+
+.cover-art {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-primary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-art::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cover-art:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--glow), var(--shadow-primary);
+}
+
+.cover-art:hover::before {
+  opacity: 1;
+}
+
+/* Buttons section */
+.buttons {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: var(--shadow-secondary);
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(255, 107, 157, 0.5);
+}
+
+.btn-secondary {
+  background: var(--secondary-gradient);
+  color: white;
+  backdrop-filter: blur(20px);
+  border-color: transparent;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #5BDDD6 0%, #4FB3A0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(78, 205, 196, 0.5);
+}
+
+.btn-tertiary {
+  background: var(--secondary-gradient);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-tertiary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(255, 154, 158, 0.5);
+}
+
+/* Spotify embed */
+.spotify-embed {
+  margin-top: 2rem;
+  animation: fadeIn 1s ease-out 0.9s both;
+}
+
+.spotify-embed iframe {
+  border-radius: 16px;
+  box-shadow: var(--shadow-secondary);
+  border: 1px solid var(--border-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .content-block {
+    margin: 0.5rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .song-title {
+    font-size: 2.5rem;
+  }
+  
+  .artist-name {
+    font-size: 1.8rem;
+  }
+  
+  .cover-art {
+    max-width: 280px;
+  }
+  
+  .btn {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .content-block {
+    margin: 0.25rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .song-title {
+    font-size: 2.2rem;
+  }
+  
+  .artist-name {
+    font-size: 1.6rem;
+  }
+  
+  .cover-art {
+    max-width: 250px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states for accessibility */
+.btn:focus {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
   </style>
   <!-- Meta Pixel Code -->
 <script>
@@ -134,47 +372,71 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1351999752524155'); // 👈 Replace with your real Pixel ID
+    fbq('init', '1351999752524155');
     fbq('track', 'PageView');
-  </script>
-  <noscript>
+</script>
+<noscript>
     <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=1351999752524155&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-  
+</noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
-  <img class="cover-art" src="images/Molly6.jpg" alt="To Be Near Cover Art" />
+<div class="container">
+  <div class="content-block">
+    <header class="header">
+      <h2 class="artist-name">Molly Devine</h2>
+      <h1 class="song-title">Good Vibes Only</h1>
+      <p class="subtitle">New single out now</p>
+      <p class="record-label">Timeless Records</p>
+    </header>
 
-  <h1>Good Vibes Only – Molly Devine</h1>
-  <p>New single out now via Timeless Records</p>
+    <div class="cover-section">
+      <img class="cover-art" src="images/Molly6.jpg" alt="Good Vibes Only Cover Art" />
+    </div>
 
-  <a class="button" id="spotifyBtn" href="https://timelessrecords.nz/play.html?type=track&id=0IIUmZ380JxdAnOl08IA8H" target="_blank">🎧 Listen on Spotify</a>
+    <div class="buttons">
+    <a class="btn btn-primary" id="spotifyBtn" href="https://timelessrecords.nz/play.html?type=track&id=0IIUmZ380JxdAnOl08IA8H" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
+      Listen on Spotify
+    </a>
 
-  <a class="button" id="youtubeBtn" href="https://youtu.be/KO5-6CDxaF8?si=ghVjhzTcnj05Bxd3" target="_blank">📺 Watch the Music Video</a>
+    <a class="btn btn-secondary" id="youtubeBtn" href="https://youtu.be/KO5-6CDxaF8?si=ghVjhzTcnj05Bxd3" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      Watch the Music Video
+    </a>
 
-  <a class="button" href="https://shop.timelessrecords.nz/products/good-vibes-only-high-quality-wav-download" target="_blank">
-  💾 Get the Full-Quality WAV
-</a>
+    <a class="btn btn-tertiary" href="https://shop.timelessrecords.nz/products/good-vibes-only-high-quality-wav-download" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7,10 12,15 17,10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Get High-Quality WAV
+    </a>
+  </div>
 
-
-  
-
-  <iframe 
-    src="https://open.spotify.com/embed/track/0IIUmZ380JxdAnOl08IA8H?utm_source=generator" 
-    width="300" height="80"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-
+    <div class="spotify-embed">
+      <iframe 
+        src="https://open.spotify.com/embed/track/0IIUmZ380JxdAnOl08IA8H?utm_source=generator&theme=0" 
+        width="300" height="80"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Spotify Button Click Tracking
     document.getElementById('spotifyBtn').addEventListener('click', function (e) {
-      e.preventDefault(); // prevent immediate navigation
+      e.preventDefault();
       fbq('trackCustom', 'Click_Spotify');
       setTimeout(() => {
         window.open(this.href, '_blank');
@@ -189,12 +451,8 @@
         window.open(this.href, '_blank');
       }, 200);
     });
-
   });
 </script>
-
-
-  
 
 </body>
 </html>
