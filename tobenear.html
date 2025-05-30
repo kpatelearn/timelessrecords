@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maddy Low – To Be Near</title>
+  <meta name="description" content="Listen to Maddy Low's new single 'To Be Near' – out now on Timeless Records.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon_round.ico">
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #C39B77 0%, #7E6B5A 100%);
+      --secondary-gradient: linear-gradient(135deg, #A88D9F 0%, #6C5B7B 100%);
+      --accent-gradient: linear-gradient(135deg, #FFE0C7 0%, #FFC8DD 100%);
+      --dark-bg: #1e1e26;
+      --card-bg: rgba(30, 30, 38, 0.9);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.9);
+      --text-muted: rgba(255, 255, 255, 0.6);
+      --border-color: rgba(255, 224, 199, 0.2);
+      --shadow-primary: 0 20px 40px rgba(0, 0, 0, 0.6);
+      --shadow-secondary: 0 10px 20px rgba(0, 0, 0, 0.4);
+      --glow: 0 0 30px rgba(255, 224, 199, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background-image: url('images/MaddyTobenear.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(25px) brightness(0.5) saturate(1.1);
+      z-index: -1;
+      transform: scale(1.1);
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .content-block {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      margin: 1rem;
+      box-shadow: var(--shadow-primary);
+      border: 1px solid var(--border-color);
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .artist-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .song-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .record-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .cover-section {
+      margin-bottom: 3rem;
+    }
+
+    .cover-art {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .buttons {
+      width: 100%;
+      max-width: 350px;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: white;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: var(--secondary-gradient);
+      color: white;
+    }
+
+    .spotify-embed {
+      margin-top: 2rem;
+    }
+
+    .spotify-embed iframe {
+      border-radius: 16px;
+      box-shadow: var(--shadow-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 600px) {
+      .song-title {
+        font-size: 2.5rem;
+      }
+      .artist-name {
+        font-size: 1.8rem;
+      }
+      .cover-art {
+        max-width: 280px;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel Code for Maddy -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2435884996781718');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=2435884996781718&ev=PageView&noscript=1"/>
+  </noscript>
+</head>
+
+<body>
+<div class="container">
+  <div class="content-block">
+    <header class="header">
+      <h2 class="artist-name">Maddy Low</h2>
+      <h1 class="song-title">To Be Near</h1>
+      <p class="subtitle">New single out now</p>
+      <p class="record-label">Timeless Records</p>
+    </header>
+
+    <div class="cover-section">
+      <img class="cover-art" src="images/MaddyTobenear.jpg" alt="To Be Near Cover Art" />
+    </div>
+
+    <div class="buttons">
+      <a class="btn btn-primary" id="spotifyBtn" href="SPOTIFY_DEEP_LINK_HERE" target="_blank">
+        Listen on Spotify
+      </a>
+
+      <a class="btn btn-secondary" id="youtubeBtn" href="https://www.youtube.com/@maddylmusic" target="_blank">
+        Visit YouTube Channel
+      </a>
+    </div>
+
+    <div class="spotify-embed">
+      <iframe
+        src="https://open.spotify.com/embed/track/PLACEHOLDER?utm_source=generator&theme=0"
+        width="300" height="80"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('spotifyBtn').addEventListener('click', function (e) {
+      fbq('trackCustom', 'Click_Spotify');
+    });
+
+    document.getElementById('youtubeBtn').addEventListener('click', function (e) {
+      fbq('trackCustom', 'Click_YouTube');
+    });
+  });
+</script>
+
+</body>
+</html>
