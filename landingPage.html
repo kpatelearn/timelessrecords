@@ -4,6 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Listen to Maddy Low – Games</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+
+    fbq('init', '2435884996781718', {
+      // Optionally, include user data for better matching:
+      // external_id: 'HASHED_USER_ID',
+      // em: 'HASHED_EMAIL',
+      // fn: 'HASHED_FIRST_NAME',
+      // ln: 'HASHED_LAST_NAME'
+    });
+
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2435884996781718&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     body {
       margin: 0;
@@ -63,10 +91,11 @@
 
   <script>
     const deepLink = 'spotify://playlist/5mykZdkyXIJNrmULYGk4x0';
-    const fallbackLink = 'https://open.spotify.com/playlist/5mykZdkyXIJNrmULYGk4x0?si=ea1c787fe08a4f33';
+    const fallbackLink = 'https://open.spotify.com/playlist/5mykZdkyXIJNrmULYGk4x0?si=ea1c787fe08a4f33&utm_source=meta&utm_medium=ad&utm_campaign=maddy_games';
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     function openSpotify() {
+      fbq('trackCustom', 'OpenSpotify');
       if (isMobile) {
         window.location = deepLink;
         setTimeout(() => {
