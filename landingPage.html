@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listen to Maddy Low – Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background-color: #1DB954;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1ed760;
+    }
+
+    .spinner {
+      margin-top: 2rem;
+      border: 4px solid #1DB954;
+      border-top: 4px solid #fff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Opening Maddy Low's New Single...</h1>
+  <p>If nothing happens, tap below to open in Spotify</p>
+
+  <a id="manualLink" class="btn" href="https://open.spotify.com/playlist/5mykZdkyXIJNrmULYGk4x0?si=ea1c787fe08a4f33" target="_blank" rel="noopener">Open Playlist</a>
+
+  <div class="spinner"></div>
+
+  <script>
+    const deepLink = 'spotify://playlist/5mykZdkyXIJNrmULYGk4x0';
+    const fallbackLink = 'https://open.spotify.com/playlist/5mykZdkyXIJNrmULYGk4x0?si=ea1c787fe08a4f33';
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    setTimeout(() => {
+      if (isMobile) {
+        window.location = deepLink;
+        setTimeout(() => {
+          window.location = fallbackLink;
+        }, 1500);
+      } else {
+        window.location = fallbackLink;
+      }
+    }, 300);
+  </script>
+</body>
+</html>
