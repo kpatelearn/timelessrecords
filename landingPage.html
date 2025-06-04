@@ -109,16 +109,19 @@
     }
 
     // Try auto-open
+// Try auto-open
+setTimeout(() => {
+  if (isMobile) {
+    fbq('trackCustom', 'OpenSpotify'); // <-- ADD THIS
+    window.location = deepLink;
     setTimeout(() => {
-      if (isMobile) {
-        window.location = deepLink;
-        setTimeout(() => {
-          document.getElementById('fallbackSection').classList.remove('hidden');
-        }, 1800);
-      } else {
-        window.location = fallbackLink;
-      }
-    }, 300);
+      document.getElementById('fallbackSection').classList.remove('hidden');
+    }, 1800);
+  } else {
+    window.location = fallbackLink;
+  }
+}, 300);
+
   </script>
 </body>
 </html>
