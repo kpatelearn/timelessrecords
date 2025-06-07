@@ -3,125 +3,485 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Listen to Maddy Low</title>
+  <title>Maddy Low – To Be Near</title>
+  <meta name="description" content="Listen to 'To Be Near' by Maddy Low – out now on Timeless Records.">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon_round.ico">
+<style>
+    * {
+      box-sizing: border-box;
+    }
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src='https://connect.facebook.net/en_US/fbevents.js';
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script');
-
-    fbq('init', '2435884996781718', {
-      // Optionally, include user data for better matching:
-      // external_id: 'HASHED_USER_ID',
-      // em: 'HASHED_EMAIL',
-      // fn: 'HASHED_FIRST_NAME',
-      // ln: 'HASHED_LAST_NAME'
-    });
-
-    fbq('track', 'PageView');
-    fbq('trackCustom', 'ToBeNearLandingView');
-
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2435884996781718&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
-  <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #111;
-      color: #fff;
+      padding: 0;
+      font-family: Georgia, serif;
+      background-color: #2e2b27;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Blurry background layer */
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/MaddyTobenear.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(15px);
+      transform: scale(1.1);
+      z-index: 1;
+    }
+
+    /* Dark overlay for better text readability */
+    .dark-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46, 43, 39, 0.6);
+      z-index: 2;
+    }
+
+    /* Main content container */
+    .main-container {
+      position: relative;
+      z-index: 3;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2.5rem;
+      border-radius: 24px;
+      max-width: 440px;
+      width: 100%;
+      color: #fdfcf9;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 16px 64px rgba(0, 0, 0, 0.2);
       text-align: center;
-      padding: 2rem;
+      margin: 1rem auto;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      line-height: 1.1;
     }
 
-    p {
-      font-size: 1rem;
-      color: #ccc;
-      margin-bottom: 1.5rem;
+    h2 {
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      font-weight: 400;
+      margin: 0 0 2rem 0;
+      opacity: 0.9;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .cover-art {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 16px;
+      margin: 0 auto 2rem auto;
+      display: block;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .cover-art:hover {
+      transform: scale(1.02);
     }
 
     .btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #1DB954;
-      color: #000;
-      font-weight: bold;
-      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      margin: 0.75rem 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      color: white;
+      width: 100%;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover {
-      background-color: #1ed760;
+    .btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
     }
 
-    .hidden {
-      display: none;
+    .btn:hover:before {
+      left: 100%;
     }
-  </style>
-</head>
-<body>
-  <h1>Now Playing: Maddy Low</h1>
-  <p>We’re opening the playlist in Spotify…</p>
 
-  <div id="fallbackSection" class="hidden">
-    <p>If nothing happens, tap the button below to open in Spotify:</p>
-    <div class="btn" onclick="openSpotify()">🎧 Open in Spotify</div>
-  </div>
+    .btn svg {
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
 
-  <script>
-    const deepLink = 'spotify://playlist/5mykZdkyXIJNrmULYGk4x0';
-    const fallbackLink = 'https://open.spotify.com/playlist/5mykZdkyXIJNrmULYGk4x0?si=ea1c787fe08a4f33&utm_source=meta&utm_medium=ad&utm_campaign=to_be_near_launch';
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    .spotify {
+      background: linear-gradient(135deg, #1DB954, #1ed760);
+      box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+    }
 
-    function openSpotify() {
-      fbq('trackCustom', 'OpenSpotify');
-      if (isMobile) {
-        window.location = deepLink;
-        setTimeout(() => {
-          window.location = fallbackLink;
-        }, 1500);
-      } else {
-        window.location = fallbackLink;
+    .spotify:hover {
+      background: linear-gradient(135deg, #1aa34a, #1DB954);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+    }
+
+    .youtube {
+      background: linear-gradient(135deg, #FF0000, #ff3333);
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .youtube:hover {
+      background: linear-gradient(135deg, #cc0000, #FF0000);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+    }
+
+    .email {
+      background: linear-gradient(135deg, #8e7d6b, #a1917e);
+      box-shadow: 0 4px 15px rgba(142, 125, 107, 0.3);
+    }
+
+    .email:hover {
+      background: linear-gradient(135deg, #a1917e, #b4a291);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(142, 125, 107, 0.4);
+    }
+
+    .spotify-embed {
+      margin-top: 2rem;
+    }
+
+    .spotify-embed iframe {
+      border-radius: 12px;
+      width: 100%;
+      height: 152px;
+      border: 0;
+    }
+
+    /* Enhanced responsive design */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 0.5rem;
+      }
+      
+      .content {
+        padding: 2rem;
+        border-radius: 20px;
+        margin: 0.5rem;
+      }
+      
+      .btn {
+        padding: 0.9rem 1.2rem;
+        font-size: 0.95rem;
+        margin: 0.6rem 0;
+      }
+
+      .spotify-embed iframe {
+        height: 140px;
       }
     }
 
-    // Try auto-open
-// Try auto-open
-setTimeout(() => {
-  if (isMobile) {
-    fbq('trackCustom', 'OpenSpotify'); // <-- ADD THIS
-    window.location = deepLink;
-    setTimeout(() => {
-      document.getElementById('fallbackSection').classList.remove('hidden');
-    }, 1800);
-  } else {
-    window.location = fallbackLink;
-  }
-}, 300);
+    @media (max-width: 480px) {
+      .content {
+        padding: 1.5rem;
+        margin: 0.25rem;
+      }
+      
+      .btn {
+        padding: 0.8rem 1rem;
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+      }
 
+      .btn svg {
+        margin-right: 0.5rem;
+        width: 18px;
+        height: 18px;
+      }
+
+      .spotify-embed iframe {
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .content {
+        padding: 1.25rem;
+      }
+      
+      .btn {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.85rem;
+      }
+
+      .spotify-embed iframe {
+        height: 110px;
+      }
+    }
+
+    /* Landscape mobile optimization */
+    @media (max-height: 600px) and (orientation: landscape) {
+      .main-container {
+        padding: 0.5rem;
+      }
+      
+      .content {
+        padding: 1.5rem;
+        margin: 0.5rem;
+      }
+      
+      h1 {
+        margin-bottom: 0.25rem;
+      }
+      
+      h2 {
+        margin-bottom: 1rem;
+      }
+      
+      .cover-art {
+        max-width: 200px;
+        margin-bottom: 1rem;
+      }
+      
+      .btn {
+        padding: 0.6rem 1rem;
+        margin: 0.4rem 0;
+        font-size: 0.9rem;
+      }
+
+      .spotify-embed {
+        margin-top: 1rem;
+      }
+
+      .spotify-embed iframe {
+        height: 100px;
+      }
+    }
+
+    /* High DPI displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .cover-art {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    }
+
+    /* Reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .content {
+        animation: none;
+      }
+      
+      .btn:before {
+        transition: none;
+      }
+      
+      .cover-art {
+        transition: none;
+      }
+      
+      .btn {
+        transition: none;
+      }
+    }
+
+    /* Loading animation */
+    .content {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Focus states for accessibility */
+    .btn:focus {
+      outline: 3px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+    }
+
+    /* Screen reader only text */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  </style>
+
+  <!-- Meta Pixel for Maddy -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2435884996781718');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'ToBeNear_PageView');
   </script>
+
+  <!-- Meta Pixel for Maddy -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod? 
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1798761437685006', {}, {
+      agent: "wordpress",
+      fbp: "fb.1.{{timestamp}}.{{random}}",
+      external_id: "maddy-landing-page"
+    });
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'ToBeNear_LandingView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1798761437685006&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+  <div class="background-blur"></div>
+  <div class="dark-overlay"></div>
+<div class="main-container">
+  <div class="content">
+    <h1>To Be Near</h1>
+    <h2>New single by Maddy Low</h2>
+    <img src="images/MaddyTobenear.jpg" alt="To Be Near album cover featuring Maddy Low" class="cover-art"/>
+
+<a class="btn spotify" id="spotifyBtn" href="#" target="_blank" rel="noopener" aria-label="Listen to To Be Near on Spotify">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.301.421-1.02.599-1.559.3z"/>
+  </svg>
+  Listen now
+</a>
+
+<a class="btn youtube" id="youtubeBtn" href="https://www.youtube.com/@maddylmusic" target="_blank" rel="noopener" aria-label="Subscribe to Maddy's YouTube channel">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+  Subscribe
+</a>
+
+<a class="btn email" id="epkBtn" href="https://timelessrecords.nz/maddy.html" target="_blank" rel="noopener" aria-label="Learn more about Maddy Low">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+  </svg>
+  More about Maddy
+</a>
+
+<!-- Spotify Preview Embed -->
+<div class="spotify-embed">
+  <iframe src="https://open.spotify.com/embed/track/5uiz5fcONk8AELp3NYSQaL?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify player for To Be Near by Maddy Low"></iframe>
+</div>
+
+  </div>
+</div>
+
+<script>
+  function trackEvent(eventName) {
+    try {
+      if (typeof fbq !== 'undefined') {
+        fbq('trackCustom', eventName);
+      }
+    } catch (err) {
+      console.warn('Tracking error:', err);
+    }
+  }
+
+  const SPOTIFY_WEB_URL = 'https://open.spotify.com/track/5uiz5fcONk8AELp3NYSQaL?si=3610f5f24ac34304';
+  const SPOTIFY_APP_URL = 'spotify://track/5uiz5fcONk8AELp3NYSQaL';
+
+  document.getElementById('spotifyBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    trackEvent('ToBeNear_Click_Spotify');
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = SPOTIFY_APP_URL;
+      setTimeout(() => {
+        window.open(SPOTIFY_WEB_URL, '_blank');
+      }, 1200);
+    } else {
+      window.open(SPOTIFY_WEB_URL, '_blank');
+    }
+  });
+
+  document.getElementById('youtubeBtn').addEventListener('click', function() {
+    trackEvent('ToBeNear_Click_YouTube');
+  });
+
+  document.getElementById('epkBtn').addEventListener('click', function() {
+    trackEvent('ToBeNear_Click_EPK');
+  });
+
+  // Prevent iOS zoom on double tap
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function (event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+
+  // Improved error handling for iframe loading
+  document.addEventListener('DOMContentLoaded', function() {
+    const iframe = document.querySelector('.spotify-embed iframe');
+    if (iframe) {
+      iframe.addEventListener('error', function() {
+        console.warn('Spotify embed failed to load');
+      });
+    }
+  });
+</script>
 </body>
 </html>
