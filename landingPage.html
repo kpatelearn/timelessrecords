@@ -355,39 +355,28 @@
     }
   </style>
 
-  <!-- Meta Pixel for Maddy -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2435884996781718');
-    fbq('track', 'PageView');
-    fbq('trackCustom', 'ToBeNear_PageView');
-  </script>
+<!-- Meta Pixel for Maddy (Original Pixel ID) -->
+<script>
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+    };
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-  <!-- Meta Pixel for Maddy -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod? 
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1798761437685006', {}, {
-      agent: "wordpress",
-      fbp: "fb.1.{{timestamp}}.{{random}}",
-      external_id: "maddy-landing-page"
-    });
-    fbq('track', 'PageView');
-    fbq('trackCustom', 'ToBeNear_LandingView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1798761437685006&ev=PageView&noscript=1"/></noscript>
+  fbq('init', '2435884996781718');
+  fbq('track', 'PageView');
+  fbq('trackCustom', 'ToBeNear_PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=2435884996781718&ev=PageView&noscript=1"/>
+</noscript>
+
 </head>
 <body>
   <div class="background-blur"></div>
@@ -443,7 +432,7 @@
 
   document.getElementById('spotifyBtn').addEventListener('click', function(e) {
     e.preventDefault();
-    trackEvent('ToBeNear_Click_Spotify');
+    trackEvent('OpenSpotify');
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
       window.location.href = SPOTIFY_APP_URL;
