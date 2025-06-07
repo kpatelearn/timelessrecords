@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     heroLogo.style.cursor = 'pointer';
     heroLogo.addEventListener('click', openHero);
     function openHero() {
-      window.location.href = "https://nfan.link/maddy-low"
+      window.location.href = "https://timelessrecords.nz/landingPage.html"
     }
   
     // Make sure all scroll containers are properly configured on page load
