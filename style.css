@@ -258,6 +258,19 @@ header.hidden {
     align-items: center;
   }
 
+  .spotify-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .spotify-gallery {
+    flex-direction: column;
+  }
+}
+
 
 .green-room-link {
     color: var(--text-color);
