@@ -628,13 +628,14 @@ footer.hidden {
     }
   }
 
-  .spotify-card-wrapper {
+.spotify-card-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     padding: 1rem;
-  }
+    width: 220px; /* or whatever looks best */
+}
+
   
   .spotify-promo-img {
     width: 100%;
@@ -643,6 +644,7 @@ footer.hidden {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
+    transform: scale(1.03);
   }
   
   #music h1 {
@@ -651,17 +653,6 @@ footer.hidden {
     color: #EBD9A3;
   }
 
-  .spotify-card-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-  }
-  
-  .spotify-promo-img:hover {
-    transform: scale(1.03);
-  }
   
   @media (max-width: 480px) {
     .spotify-promo-img {
