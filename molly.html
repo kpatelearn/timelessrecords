@@ -228,7 +228,15 @@
 
   </script>
   
-  <script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.page-section');
+  sections.forEach(section => {
+    section.classList.add('visible');
+  });
+});
+</script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {

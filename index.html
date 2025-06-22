@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-W6WGRN94');</script>
   <!-- End Google Tag Manager -->
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Timeless Records</title>
-  <!-- Google Fonts: Montserrat, Lora, IBM Plex Sans -->
   <link rel="icon" type="image/x-icon" href="favicon_round.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6WGRN94"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6WGRN94" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <!-- Header with Social Navigation -->
   <header>
     <nav class="main-nav">
       <a href="https://www.facebook.com/timelessrecordsnz"><img src="images/FB.png" alt="Facebook"></a>
@@ -30,16 +31,40 @@
       <a href="https://open.spotify.com/user/31yuaqgj7jacjagsppg2tqmc2424"><img src="images/SP.png" alt="Spotify"></a>
     </nav>
   </header>
+
+  <!-- Mobile Menu Controls -->
+  <div class="menu-toggle left" id="menuToggleLeft">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="menu-toggle right" id="menuToggleRight">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   
+  <!-- Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay">
+    <a href="#home">Home</a>
+    <a href="#artists">Artists</a>
+    <a href="#playlists">Playlists</a>
+    <a href="/popularity-checker.html">Spotify Popularity Checker</a>
+    <a href="/landing-page-creator.html">Landing Page Creator</a>
+  </div>
+
+  <!-- Main Content -->
   <div id="page-content">
+    <!-- Hero Section -->
     <section id="home" class="page-section">
-        <div class="hero-content">
-          <div class="hero-image-wrapper">
-            <img src="images/transLogoGrey3.png" alt="Timeless Records Logo" id="heroLogo" class="parallax-logo">
-          </div>
+      <div class="hero-content">
+        <div class="hero-image-wrapper">
+          <img src="images/transLogoGrey3.png" alt="Timeless Records Logo" id="heroLogo" class="parallax-logo">
         </div>
+      </div>
     </section>
 
+    <!-- Artists Section -->
     <section id="artists" class="page-section">
       <h2>Artists</h2>
       <div class="artist-gallery">
@@ -51,16 +76,14 @@
         </div>
         <div class="artist-card">
           <a href="maddy.html" target="_blank" class="plain-link">
-            <img src="images/Maddy6.jpg" alt="Artist Coming Soon" class="artist-img">
+            <img src="images/MaddyTobenear.jpg" alt="Maddy Low" class="artist-img">
             <h3 class="artist-name">Maddy Low</h3>
           </a>
         </div>
       </div>
     </section>
     
-    
-    
-    
+    <!-- About Section -->
     <section id="about" class="page-section">
       <p class="tagline">
         <b>Timeless</b> /ˈtaɪm.ləs/: <br> <i>The willingness of an artist to be inspired by any era of musical history</i> <br>
@@ -71,32 +94,31 @@
       <button id="aboutMoreBtn" class="signup-button">Learn More About Us</button>
     </section>
 
+    <!-- Music Section -->
     <section id="music" class="page-section">
-  <h1>Music</h1>
-  <div class="spotify-gallery">
-    <div class="spotify-card-wrapper">
-       <a href="https://open.spotify.com/track/0IIUmZ380JxdAnOl08IA8H?si=b0a501b6fa134e09" target="_blank">
-          <img src="images/molly-promo.jpeg" alt="Good Vibes by Molly Devine" class="spotify-promo-img">
-        </a>
-    </div>
-    <div class="spotify-card-wrapper">
-       <a href="https://open.spotify.com/track/46UPn7vGwVCHTK81i4OA74?si=2bfbe1a4831949cb" target="_blank">
-          <img src="images/maddy-promo.jpeg" alt="To be near by Maddy Low" class="spotify-promo-img">
-        </a>
-    </div>
-  </div>
-</section>
+      <h1>Music</h1>
+      <div class="spotify-gallery">
+        <div class="spotify-card-wrapper">
+          <a href="https://open.spotify.com/track/0IIUmZ380JxdAnOl08IA8H?si=b0a501b6fa134e09" target="_blank">
+            <img src="images/molly-promo.jpeg" alt="Good Vibes by Molly Devine" class="spotify-promo-img">
+          </a>
+        </div>
+        <div class="spotify-card-wrapper">
+          <a href="https://open.spotify.com/track/46UPn7vGwVCHTK81i4OA74?si=2bfbe1a4831949cb" target="_blank">
+            <img src="images/maddy-promo.jpeg" alt="To be near by Maddy Low" class="spotify-promo-img">
+          </a>
+        </div>
+      </div>
+    </section>
 
-    
-    
-
+    <!-- News Section -->
     <section id="news" class="page-section">
       <h2>News</h2>
       <div class="news-cards">
         <a href="https://www.muzic.nz/news/molly-devine-delivers-disco-infused-anthem-with-good-vibes/" class="plain-link" target="_blank">
           <div class="news-card">
             <img src="images/molly2.jpg" alt="News 1">
-            <h3>Molly Devine Delivers Disco-Infused Anthem With ‘Good Vibes’</h3>
+            <h3>Molly Devine Delivers Disco-Infused Anthem With 'Good Vibes'</h3>
           </div>
         </a>
         <a href="https://www.wewriteaboutmusic.com/reviews/molly-devine-good-vibes-only?fbclid=IwY2xjawKI7_tleHRuA2FlbQIxMABicmlkETFVYW1YSHJRM0swdW42SlUyAR7JNlCNA7jxmZ7otdy0430qVS0dlVCH130IUJ02rbV7IvLPqmqbyWTvtQq4XA_aem_djQxuL4802x2PHjwzTpZhg" class="plain-link" target="_blank">
@@ -114,94 +136,50 @@
       </div>
     </section>
     
+    <!-- Playlists Section -->
     <section id="playlists" class="page-section">
-        <div>
+      <div>
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3lzwLH1H1r8BFXhhVb11fC?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
+      </div>
     </section>
-    
    
+    <!-- Shop Section -->
     <section id="shop" class="page-section section-slim">
       <h1 id="shop-title">Shop</h1>
     </section>
 
+    <!-- Newsletter Section -->
     <section id="newsletter" class="page-section">
       <h2>Join us!</h2>
       <p>Get updates, early releases, and behind-the-scenes content straight to your inbox.</p>
       <button id="signupButton" class="signup-button">Sign Up</button>
     </section>    
-  
   </div>
-  
+
+  <!-- Footer -->
   <footer>
     <p>Contact us: <a href="mailto:admin@timelessrecords.nz">admin@timelessrecords.nz</a></p>
     <p>&copy; 2025 Timeless Records</p>
   </footer>
   
+  <!-- Footer Hover Zone -->
   <div id="footer-hover-zone"></div>
 
-  <!-- External script for the form (from LeadConnector) -->
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 
-    <!-- Green Room Modal -->
-    <div id="greenRoomModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
-          style="width:100%;height:100%;border:none;border-radius:20px"
-          id="inline-9ipFqnn8PAzpysxstTRH"
-          title="Green Room Form">
-        </iframe>
-      </div>
-    </div>
-
-    <!-- About Modal -->
-<div id="aboutModal" class="modal">
+  <!-- Green Room Modal -->
+<div id="greenRoomModal" class="modal">
   <div class="modal-content">
-    <span class="close-btn close-btn-top">&times;</span>
-    <div class="modal-scrollable">
-      <h2>About Us</h2>
-
-      <p>Timeless Records is an independent record label based in Aotearoa New Zealand, supporting emerging artists who are crafting their sound and reaching for wider audiences without compromising who they are.</p>
-
-      <p>We work with artists primarily in indie-pop and indie-rock, with a focus on those evolving toward more professional, globally resonant sounds. Our first release, a soul-infused pop track, reflects the kind of genre-blending creativity we celebrate—music that’s grounded in authenticity, but unafraid to grow into something bigger.</p>
-
-      <p>We're especially interested in artists transitioning from niche scenes into more widely accessible and globally appealing sounds—without losing what makes them unique.</p>
-
-      <h3>Artist First, Always</h3>
-      <p>We believe in fair contracts, transparent communication, and sustainable, long-term thinking. Our priority is helping artists build meaningful careers—careers shaped by their own creative vision and supported by a label that listens, cares, and collaborates.</p>
-
-      <h3>A Forward-Thinking Approach</h3>
-      <p>Timeless Records is digital-first, using modern tools and platforms to help artists connect with their audience, expand their reach, and grow their careers sustainably. We explore innovations like blockchain and emerging monetization models where they serve the artist—but we stay grounded in our core commitment: authentic human music.</p>
-
-      <p>Every track we release is created by real people, with real stories and real craft behind it.</p>
-
-      <h3>Looking Ahead</h3>
-      <p>Our aim is to create a home for artists who are ready to level up—whether through better branding, smarter digital strategies, or new opportunities in sync licensing and cross-media storytelling. We believe in community over competition, creative freedom over formulas, and timeless songs over fleeting trends.</p>
-
-      <p>If that resonates with you—whether you’re an artist, a collaborator, or a listener—welcome. We’re just getting started, and we’d love you to be part of the journey.</p>
-    </div>
+    <span class="close-btn">&times;</span>
+    <iframe
+      src="https://api.leadconnectorhq.com/widget/form/9ipFqnn8PAzpysxstTRH"
+      style="width:100%;height:100%;border:none;border-radius:20px"
+      id="inline-9ipFqnn8PAzpysxstTRH"
+      title="Green Room Form">
+    </iframe>
   </div>
 </div>
-
-<script src="script.js"></script>
-
-<script>
-   const shopTitle = document.getElementById('shop-title');
-
-shopTitle.addEventListener('click', function () {
-  if (shopTitle.textContent === 'Shop') {
-    shopTitle.textContent = 'Coming Soon';
-    shopTitle.classList.add('clicked');
-  } else {
-    shopTitle.textContent = 'Shop';
-    shopTitle.classList.remove('clicked');
-  }
-});
-</script>
-
-<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"2dd9c1a58a0ee63f58ef42ac693dbc94"})});</script>
 
 </body>
 </html>

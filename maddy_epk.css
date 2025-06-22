@@ -1,10 +1,10 @@
 /* ===============================
-   Maddy EPK CSS - Responsive + Optimized
+   Maddy EPK CSS - Clean Final Version
    =============================== */
 
 /* ---------- Variables ---------- */
 :root {
-  --heading-font: 'Montserrat', sans-serif;
+  --epk-heading-font: 'Montserrat', sans-serif;
   --tagline-font: 'IBM Plex Sans', sans-serif;
   --epk-bg: #191819;
   --epk-section-bg: #000000;
@@ -17,7 +17,6 @@
   --accent-color: #999999;
 }
 
-/* ---------- Base Page Section ---------- */
 .page-section {
   min-height: 60vh;
   padding: 2rem;
@@ -29,9 +28,8 @@
   color: var(--epk-text-color);
 }
 
-/* ---------- Hero Section ---------- */
 #home {
-  background: url('images/Maddy6_cover.jpg') center center / cover no-repeat;
+  background: url('images/MaddyLow_BigFan_250605-09.jpg') center center / cover no-repeat;
   position: relative;
   overflow: hidden;
   min-height: 90vh;
@@ -51,7 +49,7 @@
 .hero-content {
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 3000;
 }
 
 #heroLogo {
@@ -65,7 +63,6 @@ body.artist-maddy #heroLogo:hover {
   filter: drop-shadow(0 0 10px rgba(169, 116, 91, 0.8));
 }
 
-/* ---------- About Section ---------- */
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -95,13 +92,11 @@ body.artist-maddy #heroLogo:hover {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
   .content-grid .image {
     order: -1;
   }
 }
 
-/* ---------- Video Section ---------- */
 .video-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -137,18 +132,6 @@ body.artist-maddy #heroLogo:hover {
   display: block;
 }
 
-.iframe-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
 .read-more-link {
   color: var(--accent-color);
   text-decoration: underline;
@@ -163,29 +146,12 @@ body.artist-maddy #heroLogo:hover {
   text-shadow: 0 0 6px rgba(235, 217, 163, 0.5);
 }
 
-
-
-@media (max-width: 768px) {
-  .video-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .video-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------- Spotify Section ---------- */
 .spotify-wrapper {
   position: relative;
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  /* Remove percentage-based padding bottom */
-  height: 352px; /* Set explicit height matching Spotify iframe height */
+  height: 352px;
 }
 
 .spotify-wrapper iframe {
@@ -198,18 +164,11 @@ body.artist-maddy #heroLogo:hover {
 }
 
 @media (max-width: 480px) {
-  .spotify-wrapper {
-    height: 400px; /* Increased height for better mobile display */
-  }
+  .spotify-wrapper { height: 400px; }
+  .video-container { grid-template-columns: 1fr; }
+  .epk-socials-centered a img { height: 2rem; }
 }
 
-#spotify.page-section:hover .spotify-wrapper,
-#spotify.page-section:hover iframe {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* ---------- CTA Buttons ---------- */
 .cta-button .button,
 .highres-link .button-link {
   display: inline-flex;
@@ -220,7 +179,7 @@ body.artist-maddy #heroLogo:hover {
   color: var(--accent-color);
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  font-family: var(--heading-font);
+  font-family: var(--epk-heading-font);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -235,22 +194,16 @@ body.artist-maddy #heroLogo:hover {
   transform: translateY(-2px);
 }
 
-.highres-link {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
+.highres-link { text-align: center; margin-top: 1.5rem; }
 .highres-link .button-link::after {
   content: "↓";
   font-size: 1.2em;
   transition: transform 0.3s ease;
 }
-
 .highres-link .button-link:hover::after {
   transform: translateY(2px);
 }
 
-/* ---------- Carousel ---------- */
 .carousel {
   max-width: 800px;
   margin: 0 auto;
@@ -258,9 +211,7 @@ body.artist-maddy #heroLogo:hover {
   position: relative;
 }
 
-.carousel-images {
-  position: relative;
-}
+.carousel-images { position: relative; }
 
 .carousel-image {
   width: 100%;
@@ -271,9 +222,7 @@ body.artist-maddy #heroLogo:hover {
   transition: transform 0.3s ease;
 }
 
-.carousel-image.active {
-  display: block;
-}
+.carousel-image.active { display: block; }
 
 .carousel button.prev,
 .carousel button.next {
@@ -292,7 +241,6 @@ body.artist-maddy #heroLogo:hover {
 .carousel button.prev { left: 10px; }
 .carousel button.next { right: 10px; }
 
-/* ---------- Social Icons ---------- */
 .epk-socials-centered {
   display: flex;
   justify-content: center;
@@ -307,9 +255,7 @@ body.artist-maddy #heroLogo:hover {
   text-decoration: none;
 }
 
-.epk-socials-centered a:hover {
-  transform: scale(1.15);
-}
+.epk-socials-centered a:hover { transform: scale(1.15); }
 
 .epk-socials-centered a img {
   height: 2.5rem;
@@ -317,22 +263,11 @@ body.artist-maddy #heroLogo:hover {
   transition: filter 0.3s ease;
 }
 
-@media (max-width: 480px) {
-  .epk-socials-centered a img {
-    height: 2rem;
-  }
-}
-
 @media (max-width: 360px) {
-  .epk-socials-centered {
-    gap: 0.75rem;
-  }
-  .epk-socials-centered a img {
-    height: 1.6rem;
-  }
+  .epk-socials-centered { gap: 0.75rem; }
+  .epk-socials-centered a img { height: 1.6rem; }
 }
 
-/* ---------- Modals ---------- */
 .epkModal, .modal {
   position: fixed;
   inset: 0;
@@ -377,21 +312,8 @@ body.artist-maddy #heroLogo:hover {
   transition: color 0.2s ease;
 }
 
-.close-btn:hover {
-  color: #ffffff;
-}
+.close-btn:hover { color: #ffffff; }
 
-@media (max-width: 360px) {
-  .epkModalContent, .modal-content {
-    padding: 1.5rem 1rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-/* ---------- Cover Art ---------- */
 .cover-art {
   width: 90%;
   max-width: 350px;
@@ -415,7 +337,6 @@ body.artist-maddy #heroLogo:hover {
   margin-bottom: 0;
 }
 
-/* Stack About section vertically for better visual balance */
 #about .stacked-about {
   display: flex;
   flex-direction: column;
@@ -431,12 +352,8 @@ body.artist-maddy #heroLogo:hover {
   border-radius: 12px;
 }
 
+#about .stacked-about .text { max-width: 700px; }
 
-#about .stacked-about .text {
-  max-width: 700px;
-}
-
-/* ——— Lightbox (click-to-expand) ——— */
 .lightbox {
   position: fixed;
   top: 0;
@@ -457,7 +374,6 @@ body.artist-maddy #heroLogo:hover {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-
 
 footer {
   padding: 1rem;
