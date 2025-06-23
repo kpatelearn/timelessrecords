@@ -49,6 +49,7 @@
   async function checkPopularity() {
   const url = document.getElementById('spotifyUrl').value;
   const apiUrl = 'https://spotifypopularity-ao2hgmqcya-uc.a.run.app?spotifyUrl=' + encodeURIComponent(url);
+  
 
   try {
     const response = await fetch(apiUrl);
