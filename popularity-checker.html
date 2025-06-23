@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon_round.ico">
   <title>Spotify Popularity Checker</title>
   <style>
     body {
@@ -46,29 +47,34 @@
   <div class="result" id="result"></div>
 
   <script>
-    async function checkPopularity() {
-      const url = document.getElementById('spotifyUrl').value.trim();
-      if (!url) {
-        document.getElementById('result').innerText = "Please enter a Spotify URL.";
-        return;
+async function checkPopularity() {
+  const url = document.getElementById('spotifyUrl').value.trim();
+  if (!url) {
+    document.getElementById('result').innerText = "Please enter a Spotify URL.";
+    return;
+  }
+  const apiUrl = 'https://us-central1-spotify-popularity-checker.cloudfunctions.net/spotifyPopularity?spotifyUrl=' + encodeURIComponent(url);
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error('Network response was not ok');
+    const data = await response.json();
+    if (data && data.popularity !== undefined) {
+      // Add image if available
+      let html = `<div>Type: ${data.type}<br>Name: ${data.name}<br>Popularity: ${data.popularity}</div>`;
+      if (data.image) {
+        html = `<img src="${data.image}" alt="Artwork" style="max-width:200px;display:block;margin:20px auto;border-radius:10px;box-shadow:0 2px 8px #0005;"><br>` + html;
       }
-      const apiUrl = 'https://us-central1-spotify-popularity-checker.cloudfunctions.net/spotifyPopularity?spotifyUrl=' + encodeURIComponent(url);
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        if (data && data.popularity !== undefined) {
-          document.getElementById('result').innerText = `Type: ${data.type}, Name: ${data.name}, Popularity: ${data.popularity}`;
-        } else if (data && data.error) {
-          document.getElementById('result').innerText = `Error: ${data.error}`;
-        } else {
-          document.getElementById('result').innerText = "No popularity data found for this URL.";
-        }
-      } catch (error) {
-        console.error('Error fetching popularity:', error);
-        document.getElementById('result').innerText = 'Error fetching data.';
-      }
+      document.getElementById('result').innerHTML = html;
+    } else if (data && data.error) {
+      document.getElementById('result').innerText = `Error: ${data.error}`;
+    } else {
+      document.getElementById('result').innerText = "No popularity data found for this URL.";
     }
+  } catch (error) {
+    console.error('Error fetching popularity:', error);
+    document.getElementById('result').innerText = 'Error fetching data.';
+  }
+}
   </script>
 </body>
 </html>
