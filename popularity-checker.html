@@ -35,9 +35,15 @@
       margin-top: 30px;
       font-size: 1.5rem;
     }
+
+
+
+
+
   </style>
 </head>
 <body>
+  <div class="bg-glow"></div>
   <h1>Spotify Popularity Checker</h1>
   <p>Paste a Spotify track or artist URL below:</p>
   <input type="text" id="spotifyUrl" placeholder="https://open.spotify.com/track/...">
@@ -45,6 +51,8 @@
   <button onclick="checkPopularity()">Check Popularity</button>
 
   <div class="result" id="result"></div>
+  
+ 
 
   <script>
 async function checkPopularity() {
