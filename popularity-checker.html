@@ -48,9 +48,7 @@
   <script>
   async function checkPopularity() {
   const url = document.getElementById('spotifyUrl').value;
-  const apiUrl = 'https://spotifypopularity-ao2hgmqcya-uc.a.run.app?spotifyUrl=' + encodeURIComponent(url);
-  
-
+  const apiUrl = 'https://us-central1-spotify-popularity-checker.cloudfunctions.net/spotifyPopularity?spotifyUrl=...';
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error('Network response was not ok');
