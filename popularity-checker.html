@@ -60,7 +60,7 @@ async function checkPopularity() {
     const data = await response.json();
     if (data && data.popularity !== undefined) {
       // Add image if available
-      let html = `<div>Type: ${data.type}<br>Name: ${data.name}<br>Popularity: ${data.popularity}</div>`;
+      let html = `<div>Name: ${data.name}<br>Popularity: ${data.popularity}</div>`;
       if (data.image) {
         html = `<img src="${data.image}" alt="Artwork" style="max-width:200px;display:block;margin:20px auto;border-radius:10px;box-shadow:0 2px 8px #0005;"><br>` + html;
       }
