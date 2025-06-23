@@ -181,5 +181,64 @@
   </div>
 </div>
 
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <div style="overflow-y: auto; padding: 1.5rem; line-height: 1.6;">
+      <h2 style="margin-top: 0;">About Timeless Records</h2>
+
+      <h3 style="margin-top: 1.5rem;">Who We Are</h3>
+      <p>We're Timeless Records, a new indie label based in Aotearoa/New Zealand. We're passionate about music based on real human inspiration that comes from our beautiful islands. We're new and just getting started, but we plan to work with all kinds of artists—whether you're signed with us, completely DIY, recording in your bedroom, or getting your live sound just right. We want to offer support that actually fits how you work and what you can afford.</p>
+
+      <h3 style="margin-top: 1.5rem;">What We're About</h3>
+      <p>We want to see and support an Aotearoa music scene where songwriters can have the freedom and space to create work that's genuinely theirs. We're not building this to tell artists how to create, instead, we'd rather build services to make it easier to finish, share and promote music so that artists don't have to spend all their time (or more money than is necessary) on these things, when they'd rather be actually creating their music instead.</p>
+
+      <h3 style="margin-top: 1.5rem;">What Matters to Us</h3>
+
+      <h4 style="margin-top: 1rem;">Authenticity</h4>
+      <p>Yup, we still value human inspiration. Absolutely! The expression of authentic voices. Music that has something to express. The real creative process.</p>
+
+      <h4 style="margin-top: 1rem;">Room to breathe</h4>
+      <p>Good art needs space to develop. We want to do what we can to help artists have the time and headspace to experiment without the pressure of overly complicated or expensive promo.</p>
+
+      <h4 style="margin-top: 1rem;">Your call</h4>
+      <p>Not every song needs to see the light of day, and not every suggestion needs to be taken. Artists should always be able to decide what stays private and what goes public, and determine the tone and style of how their music is promoted.</p>
+
+      <h4 style="margin-top: 1rem;">Tech that helps, doesn't replace</h4>
+      <p>We love modern tools when they actually make the creative process better, not when they try to do all the creating for us. We believe that the sharing and use of each other's work needs to be ethical, and we will always support, and be part of efforts to ensure this is the case.</p>
+
+      <h4 style="margin-top: 1rem;">Learning from what came before</h4>
+      <p>Musical history is constantly inspiring, but we're not trying to live in the past, or exploit it. We want to honour, respect and value it, and be inspired by it to make tomorrow's music even better.</p>
+
+      <h3 style="margin-top: 1.5rem;">What We're Building</h3>
+
+      <h4 style="margin-top: 1rem;">Support that works for you</h4>
+      <p>DIY resources, tutorials of our own and curated ones from others, helpful tools, useful info and right up to full label services — you pick what level of help makes sense for your situation and budget.</p>
+
+      <h4 style="margin-top: 1rem;">Straight-up collaboration</h4>
+      <p>Fair deals, clear communication, no confusing contracts. You stay in control of your own career.</p>
+
+      <h3 style="margin-top: 1.5rem;">Come Along for the Ride</h3>
+      <p>Follow us @TimelessRecords on Instagram, TikTok, and YouTube for artist features, behind-the-scenes stuff, and we're planning on doing a lot more with live shows too, so watch this space. You can also sign up for updates and news of how we're getting on through the form on our website.</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+const aboutBtn = document.getElementById('aboutMoreBtn');
+const modal = document.getElementById('aboutModal');
+
+aboutBtn.addEventListener('click', () => {
+  modal.classList.add('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+</script>
+
+
 </body>
 </html>
